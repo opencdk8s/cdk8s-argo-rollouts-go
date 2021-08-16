@@ -2,7 +2,7 @@
 package opencdk8scdk8sargorollout
 
 import (
-	_jsii_ "github.com/aws/jsii-runtime-go"
+	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 	_init_ "github.com/opencdk8s/cdk8s-argo-rollouts-go/opencdk8scdk8sargorollout/jsii"
 
 	"github.com/aws/constructs-go/constructs/v3"
