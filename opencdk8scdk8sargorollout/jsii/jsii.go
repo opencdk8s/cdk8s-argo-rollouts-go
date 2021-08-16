@@ -10,11 +10,11 @@ import (
 	_jsii_      "github.com/aws/jsii-runtime-go/runtime"
 
 	constructs  "github.com/aws/constructs-go/constructs/v3/jsii"
-	cdk8splus17 "github.com/awslabs/cdk8s-go/cdk8splus17/jsii"
-	cdk8s       "github.com/cdk8s-team/cdk8s-go/cdk8s/jsii"
+	cdk8s       "github.com/cdk8s-team/cdk8s-core-go/cdk8s/jsii"
+	cdk8splus17 "github.com/cdk8s-team/cdk8s-plus-17-go/cdk8splus17/jsii"
 )
 
-//go:embed opencdk8s-cdk8s-argo-rollout-0.0.8.tgz
+//go:embed opencdk8s-cdk8s-argo-rollout-0.0.9.tgz
 var tarball []byte
 
 // Initialize loads the necessary packages in the @jsii/kernel to support the enclosing module.
@@ -26,5 +26,5 @@ func Initialize() {
 	constructs.Initialize()
 
 	// Load this library into the kernel
-	_jsii_.Load("@opencdk8s/cdk8s-argo-rollout", "0.0.8", tarball)
+	_jsii_.Load("@opencdk8s/cdk8s-argo-rollout", "0.0.9", tarball)
 }

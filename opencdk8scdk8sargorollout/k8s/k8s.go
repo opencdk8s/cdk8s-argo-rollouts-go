@@ -7,7 +7,7 @@ import (
 	_init_ "github.com/opencdk8s/cdk8s-argo-rollouts-go/opencdk8scdk8sargorollout/jsii"
 
 	"github.com/aws/constructs-go/constructs/v3"
-	"github.com/cdk8s-team/cdk8s-go/cdk8s"
+	"github.com/cdk8s-team/cdk8s-core-go/cdk8s"
 	"github.com/opencdk8s/cdk8s-argo-rollouts-go/opencdk8scdk8sargorollout/k8s/internal"
 )
 
