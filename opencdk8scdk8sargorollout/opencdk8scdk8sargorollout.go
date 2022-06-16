@@ -5,8 +5,8 @@ import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 	_init_ "github.com/opencdk8s/cdk8s-argo-rollouts-go/opencdk8scdk8sargorollout/jsii"
 
-	"github.com/aws/constructs-go/constructs/v3"
-	"github.com/cdk8s-team/cdk8s-core-go/cdk8s"
+	"github.com/aws/constructs-go/constructs/v10"
+	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
 	"github.com/opencdk8s/cdk8s-argo-rollouts-go/opencdk8scdk8sargorollout/internal"
 	"github.com/opencdk8s/cdk8s-argo-rollouts-go/opencdk8scdk8sargorollout/k8s"
 )
@@ -44,11 +44,9 @@ type ArgoRollout interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -118,6 +116,16 @@ func (j *jsiiProxy_ArgoRollout) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_ArgoRollout) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines an "extentions" API object for AWS Load Balancer Controller - https://github.com/kubernetes-sigs/aws-load-balancer-controller.
 // Experimental.
@@ -145,6 +153,25 @@ func NewArgoRollout_Override(a ArgoRollout, scope constructs.Construct, id *stri
 		[]interface{}{scope, id, props},
 		a,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func ArgoRollout_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.ArgoRollout",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for an ingress object. https://github.com/kubernetes-sigs/aws-load-balancer-controller.
@@ -231,57 +258,6 @@ func (a *jsiiProxy_ArgoRollout) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 		"addJsonPatch",
 		args,
 	)
-}
-
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (a *jsiiProxy_ArgoRollout) OnPrepare() {
-	_jsii_.InvokeVoid(
-		a,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (a *jsiiProxy_ArgoRollout) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		a,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (a *jsiiProxy_ArgoRollout) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		a,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
 }
 
 // Renders the object to Kubernetes JSON.

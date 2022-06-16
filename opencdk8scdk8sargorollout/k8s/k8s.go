@@ -6,8 +6,8 @@ import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 	_init_ "github.com/opencdk8s/cdk8s-argo-rollouts-go/opencdk8scdk8sargorollout/jsii"
 
-	"github.com/aws/constructs-go/constructs/v3"
-	"github.com/cdk8s-team/cdk8s-core-go/cdk8s"
+	"github.com/aws/constructs-go/constructs/v10"
+	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
 	"github.com/opencdk8s/cdk8s-argo-rollouts-go/opencdk8scdk8sargorollout/k8s/internal"
 )
 
@@ -2148,11 +2148,9 @@ type KubeApiService interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -2222,6 +2220,16 @@ func (j *jsiiProxy_KubeApiService) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeApiService) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1.APIService" API object.
 // Experimental.
@@ -2249,6 +2257,25 @@ func NewKubeApiService_Override(k KubeApiService, scope constructs.Construct, id
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeApiService_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeApiService",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1.APIService".
@@ -2337,57 +2364,6 @@ func (k *jsiiProxy_KubeApiService) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeApiService) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeApiService) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeApiService) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -2431,11 +2407,9 @@ type KubeApiServiceList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -2505,6 +2479,16 @@ func (j *jsiiProxy_KubeApiServiceList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeApiServiceList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1.APIServiceList" API object.
 // Experimental.
@@ -2532,6 +2516,25 @@ func NewKubeApiServiceList_Override(k KubeApiServiceList, scope constructs.Const
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeApiServiceList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeApiServiceList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1.APIServiceList".
@@ -2620,57 +2623,6 @@ func (k *jsiiProxy_KubeApiServiceList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeApiServiceList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeApiServiceList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeApiServiceList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -2723,11 +2675,9 @@ type KubeApiServiceListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -2797,6 +2747,16 @@ func (j *jsiiProxy_KubeApiServiceListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeApiServiceListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1.APIServiceList" API object.
 // Experimental.
@@ -2824,6 +2784,25 @@ func NewKubeApiServiceListV1Beta1_Override(k KubeApiServiceListV1Beta1, scope co
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeApiServiceListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeApiServiceListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1.APIServiceList".
@@ -2912,57 +2891,6 @@ func (k *jsiiProxy_KubeApiServiceListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatc
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeApiServiceListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeApiServiceListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeApiServiceListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -3029,11 +2957,9 @@ type KubeApiServiceV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -3103,6 +3029,16 @@ func (j *jsiiProxy_KubeApiServiceV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeApiServiceV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1.APIService" API object.
 // Experimental.
@@ -3130,6 +3066,25 @@ func NewKubeApiServiceV1Beta1_Override(k KubeApiServiceV1Beta1, scope constructs
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeApiServiceV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeApiServiceV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1.APIService".
@@ -3218,57 +3173,6 @@ func (k *jsiiProxy_KubeApiServiceV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeApiServiceV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeApiServiceV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeApiServiceV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -3324,11 +3228,9 @@ type KubeAuditSinkListV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -3398,6 +3300,16 @@ func (j *jsiiProxy_KubeAuditSinkListV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeAuditSinkListV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.auditregistration.v1alpha1.AuditSinkList" API object.
 // Experimental.
@@ -3425,6 +3337,25 @@ func NewKubeAuditSinkListV1Alpha1_Override(k KubeAuditSinkListV1Alpha1, scope co
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeAuditSinkListV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeAuditSinkListV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.auditregistration.v1alpha1.AuditSinkList".
@@ -3513,57 +3444,6 @@ func (k *jsiiProxy_KubeAuditSinkListV1Alpha1) AddJsonPatch(ops ...cdk8s.JsonPatc
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeAuditSinkListV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeAuditSinkListV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeAuditSinkListV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -3617,11 +3497,9 @@ type KubeAuditSinkV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -3691,6 +3569,16 @@ func (j *jsiiProxy_KubeAuditSinkV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeAuditSinkV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.auditregistration.v1alpha1.AuditSink" API object.
 // Experimental.
@@ -3718,6 +3606,25 @@ func NewKubeAuditSinkV1Alpha1_Override(k KubeAuditSinkV1Alpha1, scope constructs
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeAuditSinkV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeAuditSinkV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.auditregistration.v1alpha1.AuditSink".
@@ -3806,57 +3713,6 @@ func (k *jsiiProxy_KubeAuditSinkV1Alpha1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeAuditSinkV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeAuditSinkV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeAuditSinkV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -3912,11 +3768,9 @@ type KubeBinding interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -3986,6 +3840,16 @@ func (j *jsiiProxy_KubeBinding) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeBinding) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.Binding" API object.
 // Experimental.
@@ -4013,6 +3877,25 @@ func NewKubeBinding_Override(k KubeBinding, scope constructs.Construct, id *stri
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeBinding_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeBinding",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.Binding".
@@ -4101,57 +3984,6 @@ func (k *jsiiProxy_KubeBinding) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeBinding) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeBinding) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeBinding) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -4209,11 +4041,9 @@ type KubeCertificateSigningRequestListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -4283,6 +4113,16 @@ func (j *jsiiProxy_KubeCertificateSigningRequestListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeCertificateSigningRequestListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.certificates.v1beta1.CertificateSigningRequestList" API object.
 // Experimental.
@@ -4310,6 +4150,25 @@ func NewKubeCertificateSigningRequestListV1Beta1_Override(k KubeCertificateSigni
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeCertificateSigningRequestListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeCertificateSigningRequestListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.certificates.v1beta1.CertificateSigningRequestList".
@@ -4398,57 +4257,6 @@ func (k *jsiiProxy_KubeCertificateSigningRequestListV1Beta1) AddJsonPatch(ops ..
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeCertificateSigningRequestListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeCertificateSigningRequestListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeCertificateSigningRequestListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -4500,11 +4308,9 @@ type KubeCertificateSigningRequestV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -4574,6 +4380,16 @@ func (j *jsiiProxy_KubeCertificateSigningRequestV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeCertificateSigningRequestV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.certificates.v1beta1.CertificateSigningRequest" API object.
 // Experimental.
@@ -4601,6 +4417,25 @@ func NewKubeCertificateSigningRequestV1Beta1_Override(k KubeCertificateSigningRe
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeCertificateSigningRequestV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeCertificateSigningRequestV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.certificates.v1beta1.CertificateSigningRequest".
@@ -4689,57 +4524,6 @@ func (k *jsiiProxy_KubeCertificateSigningRequestV1Beta1) AddJsonPatch(ops ...cdk
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeCertificateSigningRequestV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeCertificateSigningRequestV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeCertificateSigningRequestV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -4793,11 +4577,9 @@ type KubeClusterRole interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -4867,6 +4649,16 @@ func (j *jsiiProxy_KubeClusterRole) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeClusterRole) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1.ClusterRole" API object.
 // Experimental.
@@ -4894,6 +4686,25 @@ func NewKubeClusterRole_Override(k KubeClusterRole, scope constructs.Construct, 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeClusterRole_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeClusterRole",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1.ClusterRole".
@@ -4982,57 +4793,6 @@ func (k *jsiiProxy_KubeClusterRole) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRole) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRole) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeClusterRole) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -5078,11 +4838,9 @@ type KubeClusterRoleBinding interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -5152,6 +4910,16 @@ func (j *jsiiProxy_KubeClusterRoleBinding) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeClusterRoleBinding) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1.ClusterRoleBinding" API object.
 // Experimental.
@@ -5179,6 +4947,25 @@ func NewKubeClusterRoleBinding_Override(k KubeClusterRoleBinding, scope construc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeClusterRoleBinding_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeClusterRoleBinding",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1.ClusterRoleBinding".
@@ -5267,57 +5054,6 @@ func (k *jsiiProxy_KubeClusterRoleBinding) AddJsonPatch(ops ...cdk8s.JsonPatch) 
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleBinding) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleBinding) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeClusterRoleBinding) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -5361,11 +5097,9 @@ type KubeClusterRoleBindingList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -5435,6 +5169,16 @@ func (j *jsiiProxy_KubeClusterRoleBindingList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeClusterRoleBindingList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1.ClusterRoleBindingList" API object.
 // Experimental.
@@ -5462,6 +5206,25 @@ func NewKubeClusterRoleBindingList_Override(k KubeClusterRoleBindingList, scope 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeClusterRoleBindingList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeClusterRoleBindingList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1.ClusterRoleBindingList".
@@ -5550,57 +5313,6 @@ func (k *jsiiProxy_KubeClusterRoleBindingList) AddJsonPatch(ops ...cdk8s.JsonPat
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleBindingList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleBindingList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeClusterRoleBindingList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -5655,11 +5367,9 @@ type KubeClusterRoleBindingListV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -5729,6 +5439,16 @@ func (j *jsiiProxy_KubeClusterRoleBindingListV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeClusterRoleBindingListV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1alpha1.ClusterRoleBindingList" API object.
 // Experimental.
@@ -5756,6 +5476,25 @@ func NewKubeClusterRoleBindingListV1Alpha1_Override(k KubeClusterRoleBindingList
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeClusterRoleBindingListV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeClusterRoleBindingListV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1alpha1.ClusterRoleBindingList".
@@ -5844,57 +5583,6 @@ func (k *jsiiProxy_KubeClusterRoleBindingListV1Alpha1) AddJsonPatch(ops ...cdk8s
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleBindingListV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleBindingListV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeClusterRoleBindingListV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -5949,11 +5637,9 @@ type KubeClusterRoleBindingListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -6023,6 +5709,16 @@ func (j *jsiiProxy_KubeClusterRoleBindingListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeClusterRoleBindingListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1beta1.ClusterRoleBindingList" API object.
 // Experimental.
@@ -6050,6 +5746,25 @@ func NewKubeClusterRoleBindingListV1Beta1_Override(k KubeClusterRoleBindingListV
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeClusterRoleBindingListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeClusterRoleBindingListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1beta1.ClusterRoleBindingList".
@@ -6138,57 +5853,6 @@ func (k *jsiiProxy_KubeClusterRoleBindingListV1Beta1) AddJsonPatch(ops ...cdk8s.
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleBindingListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleBindingListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeClusterRoleBindingListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -6263,11 +5927,9 @@ type KubeClusterRoleBindingV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -6337,6 +5999,16 @@ func (j *jsiiProxy_KubeClusterRoleBindingV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeClusterRoleBindingV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1alpha1.ClusterRoleBinding" API object.
 // Experimental.
@@ -6364,6 +6036,25 @@ func NewKubeClusterRoleBindingV1Alpha1_Override(k KubeClusterRoleBindingV1Alpha1
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeClusterRoleBindingV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeClusterRoleBindingV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1alpha1.ClusterRoleBinding".
@@ -6452,57 +6143,6 @@ func (k *jsiiProxy_KubeClusterRoleBindingV1Alpha1) AddJsonPatch(ops ...cdk8s.Jso
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleBindingV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleBindingV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeClusterRoleBindingV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -6566,11 +6206,9 @@ type KubeClusterRoleBindingV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -6640,6 +6278,16 @@ func (j *jsiiProxy_KubeClusterRoleBindingV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeClusterRoleBindingV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1beta1.ClusterRoleBinding" API object.
 // Experimental.
@@ -6667,6 +6315,25 @@ func NewKubeClusterRoleBindingV1Beta1_Override(k KubeClusterRoleBindingV1Beta1, 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeClusterRoleBindingV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeClusterRoleBindingV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1beta1.ClusterRoleBinding".
@@ -6755,57 +6422,6 @@ func (k *jsiiProxy_KubeClusterRoleBindingV1Beta1) AddJsonPatch(ops ...cdk8s.Json
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleBindingV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleBindingV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeClusterRoleBindingV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -6867,11 +6483,9 @@ type KubeClusterRoleList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -6941,6 +6555,16 @@ func (j *jsiiProxy_KubeClusterRoleList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeClusterRoleList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1.ClusterRoleList" API object.
 // Experimental.
@@ -6968,6 +6592,25 @@ func NewKubeClusterRoleList_Override(k KubeClusterRoleList, scope constructs.Con
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeClusterRoleList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeClusterRoleList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1.ClusterRoleList".
@@ -7056,57 +6699,6 @@ func (k *jsiiProxy_KubeClusterRoleList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeClusterRoleList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -7161,11 +6753,9 @@ type KubeClusterRoleListV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -7235,6 +6825,16 @@ func (j *jsiiProxy_KubeClusterRoleListV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeClusterRoleListV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1alpha1.ClusterRoleList" API object.
 // Experimental.
@@ -7262,6 +6862,25 @@ func NewKubeClusterRoleListV1Alpha1_Override(k KubeClusterRoleListV1Alpha1, scop
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeClusterRoleListV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeClusterRoleListV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1alpha1.ClusterRoleList".
@@ -7350,57 +6969,6 @@ func (k *jsiiProxy_KubeClusterRoleListV1Alpha1) AddJsonPatch(ops ...cdk8s.JsonPa
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleListV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleListV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeClusterRoleListV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -7455,11 +7023,9 @@ type KubeClusterRoleListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -7529,6 +7095,16 @@ func (j *jsiiProxy_KubeClusterRoleListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeClusterRoleListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1beta1.ClusterRoleList" API object.
 // Experimental.
@@ -7556,6 +7132,25 @@ func NewKubeClusterRoleListV1Beta1_Override(k KubeClusterRoleListV1Beta1, scope 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeClusterRoleListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeClusterRoleListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1beta1.ClusterRoleList".
@@ -7644,57 +7239,6 @@ func (k *jsiiProxy_KubeClusterRoleListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPat
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeClusterRoleListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -7765,11 +7309,9 @@ type KubeClusterRoleV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -7839,6 +7381,16 @@ func (j *jsiiProxy_KubeClusterRoleV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeClusterRoleV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1alpha1.ClusterRole" API object.
 // Experimental.
@@ -7866,6 +7418,25 @@ func NewKubeClusterRoleV1Alpha1_Override(k KubeClusterRoleV1Alpha1, scope constr
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeClusterRoleV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeClusterRoleV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1alpha1.ClusterRole".
@@ -7954,57 +7525,6 @@ func (k *jsiiProxy_KubeClusterRoleV1Alpha1) AddJsonPatch(ops ...cdk8s.JsonPatch)
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeClusterRoleV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -8064,11 +7584,9 @@ type KubeClusterRoleV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -8138,6 +7656,16 @@ func (j *jsiiProxy_KubeClusterRoleV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeClusterRoleV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1beta1.ClusterRole" API object.
 // Experimental.
@@ -8165,6 +7693,25 @@ func NewKubeClusterRoleV1Beta1_Override(k KubeClusterRoleV1Beta1, scope construc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeClusterRoleV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeClusterRoleV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1beta1.ClusterRole".
@@ -8253,57 +7800,6 @@ func (k *jsiiProxy_KubeClusterRoleV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) 
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeClusterRoleV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeClusterRoleV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -8363,11 +7859,9 @@ type KubeComponentStatus interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -8437,6 +7931,16 @@ func (j *jsiiProxy_KubeComponentStatus) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeComponentStatus) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.ComponentStatus" API object.
 // Experimental.
@@ -8464,6 +7968,25 @@ func NewKubeComponentStatus_Override(k KubeComponentStatus, scope constructs.Con
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeComponentStatus_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeComponentStatus",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.ComponentStatus".
@@ -8552,57 +8075,6 @@ func (k *jsiiProxy_KubeComponentStatus) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeComponentStatus) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeComponentStatus) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeComponentStatus) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -8646,11 +8118,9 @@ type KubeComponentStatusList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -8720,6 +8190,16 @@ func (j *jsiiProxy_KubeComponentStatusList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeComponentStatusList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.ComponentStatusList" API object.
 // Experimental.
@@ -8747,6 +8227,25 @@ func NewKubeComponentStatusList_Override(k KubeComponentStatusList, scope constr
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeComponentStatusList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeComponentStatusList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.ComponentStatusList".
@@ -8835,57 +8334,6 @@ func (k *jsiiProxy_KubeComponentStatusList) AddJsonPatch(ops ...cdk8s.JsonPatch)
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeComponentStatusList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeComponentStatusList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeComponentStatusList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -8955,11 +8403,9 @@ type KubeConfigMap interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -9029,6 +8475,16 @@ func (j *jsiiProxy_KubeConfigMap) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeConfigMap) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.ConfigMap" API object.
 // Experimental.
@@ -9056,6 +8512,25 @@ func NewKubeConfigMap_Override(k KubeConfigMap, scope constructs.Construct, id *
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeConfigMap_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeConfigMap",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.ConfigMap".
@@ -9144,57 +8619,6 @@ func (k *jsiiProxy_KubeConfigMap) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeConfigMap) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeConfigMap) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeConfigMap) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -9238,11 +8662,9 @@ type KubeConfigMapList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -9312,6 +8734,16 @@ func (j *jsiiProxy_KubeConfigMapList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeConfigMapList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.ConfigMapList" API object.
 // Experimental.
@@ -9339,6 +8771,25 @@ func NewKubeConfigMapList_Override(k KubeConfigMapList, scope constructs.Constru
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeConfigMapList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeConfigMapList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.ConfigMapList".
@@ -9427,57 +8878,6 @@ func (k *jsiiProxy_KubeConfigMapList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeConfigMapList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeConfigMapList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeConfigMapList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -9554,11 +8954,9 @@ type KubeControllerRevision interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -9628,6 +9026,16 @@ func (j *jsiiProxy_KubeControllerRevision) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeControllerRevision) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1.ControllerRevision" API object.
 // Experimental.
@@ -9655,6 +9063,25 @@ func NewKubeControllerRevision_Override(k KubeControllerRevision, scope construc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeControllerRevision_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeControllerRevision",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1.ControllerRevision".
@@ -9743,57 +9170,6 @@ func (k *jsiiProxy_KubeControllerRevision) AddJsonPatch(ops ...cdk8s.JsonPatch) 
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeControllerRevision) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeControllerRevision) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeControllerRevision) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -9837,11 +9213,9 @@ type KubeControllerRevisionList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -9911,6 +9285,16 @@ func (j *jsiiProxy_KubeControllerRevisionList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeControllerRevisionList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1.ControllerRevisionList" API object.
 // Experimental.
@@ -9938,6 +9322,25 @@ func NewKubeControllerRevisionList_Override(k KubeControllerRevisionList, scope 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeControllerRevisionList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeControllerRevisionList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1.ControllerRevisionList".
@@ -10026,57 +9429,6 @@ func (k *jsiiProxy_KubeControllerRevisionList) AddJsonPatch(ops ...cdk8s.JsonPat
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeControllerRevisionList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeControllerRevisionList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeControllerRevisionList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -10131,11 +9483,9 @@ type KubeControllerRevisionListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -10205,6 +9555,16 @@ func (j *jsiiProxy_KubeControllerRevisionListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeControllerRevisionListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1beta1.ControllerRevisionList" API object.
 // Experimental.
@@ -10232,6 +9592,25 @@ func NewKubeControllerRevisionListV1Beta1_Override(k KubeControllerRevisionListV
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeControllerRevisionListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeControllerRevisionListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1beta1.ControllerRevisionList".
@@ -10320,57 +9699,6 @@ func (k *jsiiProxy_KubeControllerRevisionListV1Beta1) AddJsonPatch(ops ...cdk8s.
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeControllerRevisionListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeControllerRevisionListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeControllerRevisionListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -10425,11 +9753,9 @@ type KubeControllerRevisionListV1Beta2 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -10499,6 +9825,16 @@ func (j *jsiiProxy_KubeControllerRevisionListV1Beta2) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeControllerRevisionListV1Beta2) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1beta2.ControllerRevisionList" API object.
 // Experimental.
@@ -10526,6 +9862,25 @@ func NewKubeControllerRevisionListV1Beta2_Override(k KubeControllerRevisionListV
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeControllerRevisionListV1Beta2_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeControllerRevisionListV1Beta2",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1beta2.ControllerRevisionList".
@@ -10614,57 +9969,6 @@ func (k *jsiiProxy_KubeControllerRevisionListV1Beta2) AddJsonPatch(ops ...cdk8s.
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeControllerRevisionListV1Beta2) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeControllerRevisionListV1Beta2) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeControllerRevisionListV1Beta2) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -10739,11 +10043,9 @@ type KubeControllerRevisionV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -10813,6 +10115,16 @@ func (j *jsiiProxy_KubeControllerRevisionV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeControllerRevisionV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1beta1.ControllerRevision" API object.
 // Experimental.
@@ -10840,6 +10152,25 @@ func NewKubeControllerRevisionV1Beta1_Override(k KubeControllerRevisionV1Beta1, 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeControllerRevisionV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeControllerRevisionV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1beta1.ControllerRevision".
@@ -10928,57 +10259,6 @@ func (k *jsiiProxy_KubeControllerRevisionV1Beta1) AddJsonPatch(ops ...cdk8s.Json
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeControllerRevisionV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeControllerRevisionV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeControllerRevisionV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -11042,11 +10322,9 @@ type KubeControllerRevisionV1Beta2 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -11116,6 +10394,16 @@ func (j *jsiiProxy_KubeControllerRevisionV1Beta2) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeControllerRevisionV1Beta2) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1beta2.ControllerRevision" API object.
 // Experimental.
@@ -11143,6 +10431,25 @@ func NewKubeControllerRevisionV1Beta2_Override(k KubeControllerRevisionV1Beta2, 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeControllerRevisionV1Beta2_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeControllerRevisionV1Beta2",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1beta2.ControllerRevision".
@@ -11231,57 +10538,6 @@ func (k *jsiiProxy_KubeControllerRevisionV1Beta2) AddJsonPatch(ops ...cdk8s.Json
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeControllerRevisionV1Beta2) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeControllerRevisionV1Beta2) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeControllerRevisionV1Beta2) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -11343,11 +10599,9 @@ type KubeCronJobListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -11417,6 +10671,16 @@ func (j *jsiiProxy_KubeCronJobListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeCronJobListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.batch.v1beta1.CronJobList" API object.
 // Experimental.
@@ -11444,6 +10708,25 @@ func NewKubeCronJobListV1Beta1_Override(k KubeCronJobListV1Beta1, scope construc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeCronJobListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeCronJobListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.batch.v1beta1.CronJobList".
@@ -11532,57 +10815,6 @@ func (k *jsiiProxy_KubeCronJobListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) 
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeCronJobListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeCronJobListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeCronJobListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -11639,11 +10871,9 @@ type KubeCronJobListV2Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -11713,6 +10943,16 @@ func (j *jsiiProxy_KubeCronJobListV2Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeCronJobListV2Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.batch.v2alpha1.CronJobList" API object.
 // Experimental.
@@ -11740,6 +10980,25 @@ func NewKubeCronJobListV2Alpha1_Override(k KubeCronJobListV2Alpha1, scope constr
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeCronJobListV2Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeCronJobListV2Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.batch.v2alpha1.CronJobList".
@@ -11828,57 +11087,6 @@ func (k *jsiiProxy_KubeCronJobListV2Alpha1) AddJsonPatch(ops ...cdk8s.JsonPatch)
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeCronJobListV2Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeCronJobListV2Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeCronJobListV2Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -11935,11 +11143,9 @@ type KubeCronJobV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -12009,6 +11215,16 @@ func (j *jsiiProxy_KubeCronJobV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeCronJobV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.batch.v1beta1.CronJob" API object.
 // Experimental.
@@ -12036,6 +11252,25 @@ func NewKubeCronJobV1Beta1_Override(k KubeCronJobV1Beta1, scope constructs.Const
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeCronJobV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeCronJobV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.batch.v1beta1.CronJob".
@@ -12124,57 +11359,6 @@ func (k *jsiiProxy_KubeCronJobV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeCronJobV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeCronJobV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeCronJobV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -12233,11 +11417,9 @@ type KubeCronJobV2Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -12307,6 +11489,16 @@ func (j *jsiiProxy_KubeCronJobV2Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeCronJobV2Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.batch.v2alpha1.CronJob" API object.
 // Experimental.
@@ -12334,6 +11526,25 @@ func NewKubeCronJobV2Alpha1_Override(k KubeCronJobV2Alpha1, scope constructs.Con
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeCronJobV2Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeCronJobV2Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.batch.v2alpha1.CronJob".
@@ -12422,57 +11633,6 @@ func (k *jsiiProxy_KubeCronJobV2Alpha1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeCronJobV2Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeCronJobV2Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeCronJobV2Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -12531,11 +11691,9 @@ type KubeCsiDriverListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -12605,6 +11763,16 @@ func (j *jsiiProxy_KubeCsiDriverListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeCsiDriverListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.storage.v1beta1.CSIDriverList" API object.
 // Experimental.
@@ -12632,6 +11800,25 @@ func NewKubeCsiDriverListV1Beta1_Override(k KubeCsiDriverListV1Beta1, scope cons
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeCsiDriverListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeCsiDriverListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.storage.v1beta1.CSIDriverList".
@@ -12720,57 +11907,6 @@ func (k *jsiiProxy_KubeCsiDriverListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeCsiDriverListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeCsiDriverListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeCsiDriverListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -12827,11 +11963,9 @@ type KubeCsiDriverV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -12901,6 +12035,16 @@ func (j *jsiiProxy_KubeCsiDriverV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeCsiDriverV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.storage.v1beta1.CSIDriver" API object.
 // Experimental.
@@ -12928,6 +12072,25 @@ func NewKubeCsiDriverV1Beta1_Override(k KubeCsiDriverV1Beta1, scope constructs.C
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeCsiDriverV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeCsiDriverV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.storage.v1beta1.CSIDriver".
@@ -13016,57 +12179,6 @@ func (k *jsiiProxy_KubeCsiDriverV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeCsiDriverV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeCsiDriverV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeCsiDriverV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -13125,11 +12237,9 @@ type KubeCsiNodeListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -13199,6 +12309,16 @@ func (j *jsiiProxy_KubeCsiNodeListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeCsiNodeListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.storage.v1beta1.CSINodeList" API object.
 // Experimental.
@@ -13226,6 +12346,25 @@ func NewKubeCsiNodeListV1Beta1_Override(k KubeCsiNodeListV1Beta1, scope construc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeCsiNodeListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeCsiNodeListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.storage.v1beta1.CSINodeList".
@@ -13314,57 +12453,6 @@ func (k *jsiiProxy_KubeCsiNodeListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) 
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeCsiNodeListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeCsiNodeListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeCsiNodeListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -13421,11 +12509,9 @@ type KubeCsiNodeV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -13495,6 +12581,16 @@ func (j *jsiiProxy_KubeCsiNodeV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeCsiNodeV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.storage.v1beta1.CSINode" API object.
 // Experimental.
@@ -13522,6 +12618,25 @@ func NewKubeCsiNodeV1Beta1_Override(k KubeCsiNodeV1Beta1, scope constructs.Const
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeCsiNodeV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeCsiNodeV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.storage.v1beta1.CSINode".
@@ -13610,57 +12725,6 @@ func (k *jsiiProxy_KubeCsiNodeV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeCsiNodeV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeCsiNodeV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeCsiNodeV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -13717,11 +12781,9 @@ type KubeCustomResourceDefinitionListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -13791,6 +12853,16 @@ func (j *jsiiProxy_KubeCustomResourceDefinitionListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeCustomResourceDefinitionListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceDefinitionList" API object.
 // Experimental.
@@ -13818,6 +12890,25 @@ func NewKubeCustomResourceDefinitionListV1Beta1_Override(k KubeCustomResourceDef
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeCustomResourceDefinitionListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeCustomResourceDefinitionListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceDefinitionList".
@@ -13906,57 +12997,6 @@ func (k *jsiiProxy_KubeCustomResourceDefinitionListV1Beta1) AddJsonPatch(ops ...
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeCustomResourceDefinitionListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeCustomResourceDefinitionListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeCustomResourceDefinitionListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -14012,11 +13052,9 @@ type KubeCustomResourceDefinitionV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -14086,6 +13124,16 @@ func (j *jsiiProxy_KubeCustomResourceDefinitionV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeCustomResourceDefinitionV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceDefinition" API object.
 // Experimental.
@@ -14113,6 +13161,25 @@ func NewKubeCustomResourceDefinitionV1Beta1_Override(k KubeCustomResourceDefinit
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeCustomResourceDefinitionV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeCustomResourceDefinitionV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1beta1.CustomResourceDefinition".
@@ -14201,57 +13268,6 @@ func (k *jsiiProxy_KubeCustomResourceDefinitionV1Beta1) AddJsonPatch(ops ...cdk8
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeCustomResourceDefinitionV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeCustomResourceDefinitionV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeCustomResourceDefinitionV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -14307,11 +13323,9 @@ type KubeDaemonSet interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -14381,6 +13395,16 @@ func (j *jsiiProxy_KubeDaemonSet) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeDaemonSet) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1.DaemonSet" API object.
 // Experimental.
@@ -14408,6 +13432,25 @@ func NewKubeDaemonSet_Override(k KubeDaemonSet, scope constructs.Construct, id *
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeDaemonSet_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeDaemonSet",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1.DaemonSet".
@@ -14496,57 +13539,6 @@ func (k *jsiiProxy_KubeDaemonSet) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeDaemonSet) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeDaemonSet) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeDaemonSet) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -14590,11 +13582,9 @@ type KubeDaemonSetList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -14664,6 +13654,16 @@ func (j *jsiiProxy_KubeDaemonSetList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeDaemonSetList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1.DaemonSetList" API object.
 // Experimental.
@@ -14691,6 +13691,25 @@ func NewKubeDaemonSetList_Override(k KubeDaemonSetList, scope constructs.Constru
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeDaemonSetList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeDaemonSetList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1.DaemonSetList".
@@ -14779,57 +13798,6 @@ func (k *jsiiProxy_KubeDaemonSetList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeDaemonSetList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeDaemonSetList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeDaemonSetList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -14886,11 +13854,9 @@ type KubeDaemonSetListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -14960,6 +13926,16 @@ func (j *jsiiProxy_KubeDaemonSetListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeDaemonSetListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.extensions.v1beta1.DaemonSetList" API object.
 // Experimental.
@@ -14987,6 +13963,25 @@ func NewKubeDaemonSetListV1Beta1_Override(k KubeDaemonSetListV1Beta1, scope cons
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeDaemonSetListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeDaemonSetListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.extensions.v1beta1.DaemonSetList".
@@ -15075,57 +14070,6 @@ func (k *jsiiProxy_KubeDaemonSetListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeDaemonSetListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeDaemonSetListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeDaemonSetListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -15182,11 +14126,9 @@ type KubeDaemonSetListV1Beta2 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -15256,6 +14198,16 @@ func (j *jsiiProxy_KubeDaemonSetListV1Beta2) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeDaemonSetListV1Beta2) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1beta2.DaemonSetList" API object.
 // Experimental.
@@ -15283,6 +14235,25 @@ func NewKubeDaemonSetListV1Beta2_Override(k KubeDaemonSetListV1Beta2, scope cons
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeDaemonSetListV1Beta2_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeDaemonSetListV1Beta2",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1beta2.DaemonSetList".
@@ -15371,57 +14342,6 @@ func (k *jsiiProxy_KubeDaemonSetListV1Beta2) AddJsonPatch(ops ...cdk8s.JsonPatch
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeDaemonSetListV1Beta2) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeDaemonSetListV1Beta2) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeDaemonSetListV1Beta2) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -15495,11 +14415,9 @@ type KubeDaemonSetV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -15569,6 +14487,16 @@ func (j *jsiiProxy_KubeDaemonSetV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeDaemonSetV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.extensions.v1beta1.DaemonSet" API object.
 // Experimental.
@@ -15596,6 +14524,25 @@ func NewKubeDaemonSetV1Beta1_Override(k KubeDaemonSetV1Beta1, scope constructs.C
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeDaemonSetV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeDaemonSetV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.extensions.v1beta1.DaemonSet".
@@ -15684,57 +14631,6 @@ func (k *jsiiProxy_KubeDaemonSetV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeDaemonSetV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeDaemonSetV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeDaemonSetV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -15797,11 +14693,9 @@ type KubeDaemonSetV1Beta2 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -15871,6 +14765,16 @@ func (j *jsiiProxy_KubeDaemonSetV1Beta2) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeDaemonSetV1Beta2) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1beta2.DaemonSet" API object.
 // Experimental.
@@ -15898,6 +14802,25 @@ func NewKubeDaemonSetV1Beta2_Override(k KubeDaemonSetV1Beta2, scope constructs.C
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeDaemonSetV1Beta2_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeDaemonSetV1Beta2",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1beta2.DaemonSet".
@@ -15986,57 +14909,6 @@ func (k *jsiiProxy_KubeDaemonSetV1Beta2) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeDaemonSetV1Beta2) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeDaemonSetV1Beta2) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeDaemonSetV1Beta2) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -16097,11 +14969,9 @@ type KubeDeployment interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -16171,6 +15041,16 @@ func (j *jsiiProxy_KubeDeployment) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeDeployment) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1.Deployment" API object.
 // Experimental.
@@ -16198,6 +15078,25 @@ func NewKubeDeployment_Override(k KubeDeployment, scope constructs.Construct, id
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeDeployment_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeDeployment",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1.Deployment".
@@ -16286,57 +15185,6 @@ func (k *jsiiProxy_KubeDeployment) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeDeployment) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeDeployment) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeDeployment) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -16380,11 +15228,9 @@ type KubeDeploymentList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -16454,6 +15300,16 @@ func (j *jsiiProxy_KubeDeploymentList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeDeploymentList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1.DeploymentList" API object.
 // Experimental.
@@ -16481,6 +15337,25 @@ func NewKubeDeploymentList_Override(k KubeDeploymentList, scope constructs.Const
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeDeploymentList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeDeploymentList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1.DeploymentList".
@@ -16569,57 +15444,6 @@ func (k *jsiiProxy_KubeDeploymentList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeDeploymentList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeDeploymentList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeDeploymentList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -16674,11 +15498,9 @@ type KubeDeploymentListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -16748,6 +15570,16 @@ func (j *jsiiProxy_KubeDeploymentListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeDeploymentListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.extensions.v1beta1.DeploymentList" API object.
 // Experimental.
@@ -16775,6 +15607,25 @@ func NewKubeDeploymentListV1Beta1_Override(k KubeDeploymentListV1Beta1, scope co
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeDeploymentListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeDeploymentListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.extensions.v1beta1.DeploymentList".
@@ -16863,57 +15714,6 @@ func (k *jsiiProxy_KubeDeploymentListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatc
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeDeploymentListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeDeploymentListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeDeploymentListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -16968,11 +15768,9 @@ type KubeDeploymentListV1Beta2 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -17042,6 +15840,16 @@ func (j *jsiiProxy_KubeDeploymentListV1Beta2) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeDeploymentListV1Beta2) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1beta2.DeploymentList" API object.
 // Experimental.
@@ -17069,6 +15877,25 @@ func NewKubeDeploymentListV1Beta2_Override(k KubeDeploymentListV1Beta2, scope co
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeDeploymentListV1Beta2_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeDeploymentListV1Beta2",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1beta2.DeploymentList".
@@ -17157,57 +15984,6 @@ func (k *jsiiProxy_KubeDeploymentListV1Beta2) AddJsonPatch(ops ...cdk8s.JsonPatc
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeDeploymentListV1Beta2) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeDeploymentListV1Beta2) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeDeploymentListV1Beta2) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -17275,11 +16051,9 @@ type KubeDeploymentV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -17349,6 +16123,16 @@ func (j *jsiiProxy_KubeDeploymentV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeDeploymentV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.extensions.v1beta1.Deployment" API object.
 // Experimental.
@@ -17376,6 +16160,25 @@ func NewKubeDeploymentV1Beta1_Override(k KubeDeploymentV1Beta1, scope constructs
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeDeploymentV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeDeploymentV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.extensions.v1beta1.Deployment".
@@ -17464,57 +16267,6 @@ func (k *jsiiProxy_KubeDeploymentV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeDeploymentV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeDeploymentV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeDeploymentV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -17573,11 +16325,9 @@ type KubeDeploymentV1Beta2 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -17647,6 +16397,16 @@ func (j *jsiiProxy_KubeDeploymentV1Beta2) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeDeploymentV1Beta2) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1beta2.Deployment" API object.
 // Experimental.
@@ -17674,6 +16434,25 @@ func NewKubeDeploymentV1Beta2_Override(k KubeDeploymentV1Beta2, scope constructs
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeDeploymentV1Beta2_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeDeploymentV1Beta2",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1beta2.Deployment".
@@ -17762,57 +16541,6 @@ func (k *jsiiProxy_KubeDeploymentV1Beta2) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeDeploymentV1Beta2) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeDeploymentV1Beta2) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeDeploymentV1Beta2) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -17882,11 +16610,9 @@ type KubeEndpoints interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -17956,6 +16682,16 @@ func (j *jsiiProxy_KubeEndpoints) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeEndpoints) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.Endpoints" API object.
 // Experimental.
@@ -17983,6 +16719,25 @@ func NewKubeEndpoints_Override(k KubeEndpoints, scope constructs.Construct, id *
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeEndpoints_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeEndpoints",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.Endpoints".
@@ -18071,57 +16826,6 @@ func (k *jsiiProxy_KubeEndpoints) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeEndpoints) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeEndpoints) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeEndpoints) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -18165,11 +16869,9 @@ type KubeEndpointsList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -18239,6 +16941,16 @@ func (j *jsiiProxy_KubeEndpointsList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeEndpointsList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.EndpointsList" API object.
 // Experimental.
@@ -18266,6 +16978,25 @@ func NewKubeEndpointsList_Override(k KubeEndpointsList, scope constructs.Constru
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeEndpointsList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeEndpointsList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.EndpointsList".
@@ -18354,57 +17085,6 @@ func (k *jsiiProxy_KubeEndpointsList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeEndpointsList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeEndpointsList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeEndpointsList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -18489,11 +17169,9 @@ type KubeEvent interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -18563,6 +17241,16 @@ func (j *jsiiProxy_KubeEvent) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeEvent) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.Event" API object.
 // Experimental.
@@ -18590,6 +17278,25 @@ func NewKubeEvent_Override(k KubeEvent, scope constructs.Construct, id *string, 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeEvent_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeEvent",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.Event".
@@ -18678,57 +17385,6 @@ func (k *jsiiProxy_KubeEvent) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeEvent) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeEvent) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeEvent) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -18772,11 +17428,9 @@ type KubeEventList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -18846,6 +17500,16 @@ func (j *jsiiProxy_KubeEventList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeEventList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.EventList" API object.
 // Experimental.
@@ -18873,6 +17537,25 @@ func NewKubeEventList_Override(k KubeEventList, scope constructs.Construct, id *
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeEventList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeEventList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.EventList".
@@ -18961,57 +17644,6 @@ func (k *jsiiProxy_KubeEventList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeEventList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeEventList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeEventList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -19068,11 +17700,9 @@ type KubeEventListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -19142,6 +17772,16 @@ func (j *jsiiProxy_KubeEventListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeEventListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.events.v1beta1.EventList" API object.
 // Experimental.
@@ -19169,6 +17809,25 @@ func NewKubeEventListV1Beta1_Override(k KubeEventListV1Beta1, scope constructs.C
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeEventListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeEventListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.events.v1beta1.EventList".
@@ -19255,57 +17914,6 @@ func (k *jsiiProxy_KubeEventListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 		"addJsonPatch",
 		args,
 	)
-}
-
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeEventListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeEventListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeEventListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
 }
 
 // Renders the object to Kubernetes JSON.
@@ -19422,11 +18030,9 @@ type KubeEventV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -19496,6 +18102,16 @@ func (j *jsiiProxy_KubeEventV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeEventV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.events.v1beta1.Event" API object.
 // Experimental.
@@ -19523,6 +18139,25 @@ func NewKubeEventV1Beta1_Override(k KubeEventV1Beta1, scope constructs.Construct
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeEventV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeEventV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.events.v1beta1.Event".
@@ -19609,57 +18244,6 @@ func (k *jsiiProxy_KubeEventV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 		"addJsonPatch",
 		args,
 	)
-}
-
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeEventV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeEventV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeEventV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
 }
 
 // Renders the object to Kubernetes JSON.
@@ -19766,11 +18350,9 @@ type KubeEvictionV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -19840,6 +18422,16 @@ func (j *jsiiProxy_KubeEvictionV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeEvictionV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.policy.v1beta1.Eviction" API object.
 // Experimental.
@@ -19867,6 +18459,25 @@ func NewKubeEvictionV1Beta1_Override(k KubeEvictionV1Beta1, scope constructs.Con
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeEvictionV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeEvictionV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.policy.v1beta1.Eviction".
@@ -19955,57 +18566,6 @@ func (k *jsiiProxy_KubeEvictionV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeEvictionV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeEvictionV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeEvictionV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -20062,11 +18622,9 @@ type KubeHorizontalPodAutoscaler interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -20136,6 +18694,16 @@ func (j *jsiiProxy_KubeHorizontalPodAutoscaler) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeHorizontalPodAutoscaler) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.autoscaling.v1.HorizontalPodAutoscaler" API object.
 // Experimental.
@@ -20163,6 +18731,25 @@ func NewKubeHorizontalPodAutoscaler_Override(k KubeHorizontalPodAutoscaler, scop
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeHorizontalPodAutoscaler_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeHorizontalPodAutoscaler",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.autoscaling.v1.HorizontalPodAutoscaler".
@@ -20251,57 +18838,6 @@ func (k *jsiiProxy_KubeHorizontalPodAutoscaler) AddJsonPatch(ops ...cdk8s.JsonPa
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeHorizontalPodAutoscaler) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeHorizontalPodAutoscaler) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeHorizontalPodAutoscaler) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -20345,11 +18881,9 @@ type KubeHorizontalPodAutoscalerList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -20419,6 +18953,16 @@ func (j *jsiiProxy_KubeHorizontalPodAutoscalerList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeHorizontalPodAutoscalerList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.autoscaling.v1.HorizontalPodAutoscalerList" API object.
 // Experimental.
@@ -20446,6 +18990,25 @@ func NewKubeHorizontalPodAutoscalerList_Override(k KubeHorizontalPodAutoscalerLi
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeHorizontalPodAutoscalerList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeHorizontalPodAutoscalerList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.autoscaling.v1.HorizontalPodAutoscalerList".
@@ -20534,57 +19097,6 @@ func (k *jsiiProxy_KubeHorizontalPodAutoscalerList) AddJsonPatch(ops ...cdk8s.Js
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeHorizontalPodAutoscalerList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeHorizontalPodAutoscalerList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeHorizontalPodAutoscalerList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -20639,11 +19151,9 @@ type KubeHorizontalPodAutoscalerListV2Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -20713,6 +19223,16 @@ func (j *jsiiProxy_KubeHorizontalPodAutoscalerListV2Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeHorizontalPodAutoscalerListV2Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerList" API object.
 // Experimental.
@@ -20740,6 +19260,25 @@ func NewKubeHorizontalPodAutoscalerListV2Beta1_Override(k KubeHorizontalPodAutos
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeHorizontalPodAutoscalerListV2Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeHorizontalPodAutoscalerListV2Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscalerList".
@@ -20828,57 +19367,6 @@ func (k *jsiiProxy_KubeHorizontalPodAutoscalerListV2Beta1) AddJsonPatch(ops ...c
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeHorizontalPodAutoscalerListV2Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeHorizontalPodAutoscalerListV2Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeHorizontalPodAutoscalerListV2Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -20933,11 +19421,9 @@ type KubeHorizontalPodAutoscalerListV2Beta2 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -21007,6 +19493,16 @@ func (j *jsiiProxy_KubeHorizontalPodAutoscalerListV2Beta2) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeHorizontalPodAutoscalerListV2Beta2) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.autoscaling.v2beta2.HorizontalPodAutoscalerList" API object.
 // Experimental.
@@ -21034,6 +19530,25 @@ func NewKubeHorizontalPodAutoscalerListV2Beta2_Override(k KubeHorizontalPodAutos
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeHorizontalPodAutoscalerListV2Beta2_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeHorizontalPodAutoscalerListV2Beta2",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.autoscaling.v2beta2.HorizontalPodAutoscalerList".
@@ -21122,57 +19637,6 @@ func (k *jsiiProxy_KubeHorizontalPodAutoscalerListV2Beta2) AddJsonPatch(ops ...c
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeHorizontalPodAutoscalerListV2Beta2) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeHorizontalPodAutoscalerListV2Beta2) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeHorizontalPodAutoscalerListV2Beta2) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -21242,11 +19706,9 @@ type KubeHorizontalPodAutoscalerV2Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -21316,6 +19778,16 @@ func (j *jsiiProxy_KubeHorizontalPodAutoscalerV2Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeHorizontalPodAutoscalerV2Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscaler" API object.
 // Experimental.
@@ -21343,6 +19815,25 @@ func NewKubeHorizontalPodAutoscalerV2Beta1_Override(k KubeHorizontalPodAutoscale
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeHorizontalPodAutoscalerV2Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeHorizontalPodAutoscalerV2Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.autoscaling.v2beta1.HorizontalPodAutoscaler".
@@ -21431,57 +19922,6 @@ func (k *jsiiProxy_KubeHorizontalPodAutoscalerV2Beta1) AddJsonPatch(ops ...cdk8s
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeHorizontalPodAutoscalerV2Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeHorizontalPodAutoscalerV2Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeHorizontalPodAutoscalerV2Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -21540,11 +19980,9 @@ type KubeHorizontalPodAutoscalerV2Beta2 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -21614,6 +20052,16 @@ func (j *jsiiProxy_KubeHorizontalPodAutoscalerV2Beta2) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeHorizontalPodAutoscalerV2Beta2) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.autoscaling.v2beta2.HorizontalPodAutoscaler" API object.
 // Experimental.
@@ -21641,6 +20089,25 @@ func NewKubeHorizontalPodAutoscalerV2Beta2_Override(k KubeHorizontalPodAutoscale
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeHorizontalPodAutoscalerV2Beta2_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeHorizontalPodAutoscalerV2Beta2",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.autoscaling.v2beta2.HorizontalPodAutoscaler".
@@ -21729,57 +20196,6 @@ func (k *jsiiProxy_KubeHorizontalPodAutoscalerV2Beta2) AddJsonPatch(ops ...cdk8s
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeHorizontalPodAutoscalerV2Beta2) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeHorizontalPodAutoscalerV2Beta2) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeHorizontalPodAutoscalerV2Beta2) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -21838,11 +20254,9 @@ type KubeIngressListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -21912,6 +20326,16 @@ func (j *jsiiProxy_KubeIngressListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeIngressListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.networking.v1beta1.IngressList" API object.
 // Experimental.
@@ -21939,6 +20363,25 @@ func NewKubeIngressListV1Beta1_Override(k KubeIngressListV1Beta1, scope construc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeIngressListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeIngressListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.networking.v1beta1.IngressList".
@@ -22027,57 +20470,6 @@ func (k *jsiiProxy_KubeIngressListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) 
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeIngressListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeIngressListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeIngressListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -22136,11 +20528,9 @@ type KubeIngressV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -22210,6 +20600,16 @@ func (j *jsiiProxy_KubeIngressV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeIngressV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.networking.v1beta1.Ingress" API object.
 // Experimental.
@@ -22237,6 +20637,25 @@ func NewKubeIngressV1Beta1_Override(k KubeIngressV1Beta1, scope constructs.Const
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeIngressV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeIngressV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.networking.v1beta1.Ingress".
@@ -22325,57 +20744,6 @@ func (k *jsiiProxy_KubeIngressV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeIngressV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeIngressV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeIngressV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -22436,11 +20804,9 @@ type KubeJob interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -22510,6 +20876,16 @@ func (j *jsiiProxy_KubeJob) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeJob) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.batch.v1.Job" API object.
 // Experimental.
@@ -22537,6 +20913,25 @@ func NewKubeJob_Override(k KubeJob, scope constructs.Construct, id *string, prop
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeJob_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeJob",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.batch.v1.Job".
@@ -22625,57 +21020,6 @@ func (k *jsiiProxy_KubeJob) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeJob) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeJob) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeJob) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -22719,11 +21063,9 @@ type KubeJobList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -22793,6 +21135,16 @@ func (j *jsiiProxy_KubeJobList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeJobList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.batch.v1.JobList" API object.
 // Experimental.
@@ -22820,6 +21172,25 @@ func NewKubeJobList_Override(k KubeJobList, scope constructs.Construct, id *stri
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeJobList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeJobList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.batch.v1.JobList".
@@ -22908,57 +21279,6 @@ func (k *jsiiProxy_KubeJobList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeJobList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeJobList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeJobList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -23030,11 +21350,9 @@ type KubeLease interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -23104,6 +21422,16 @@ func (j *jsiiProxy_KubeLease) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeLease) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.coordination.v1.Lease" API object.
 // Experimental.
@@ -23131,6 +21459,25 @@ func NewKubeLease_Override(k KubeLease, scope constructs.Construct, id *string, 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeLease_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeLease",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.coordination.v1.Lease".
@@ -23219,57 +21566,6 @@ func (k *jsiiProxy_KubeLease) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeLease) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeLease) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeLease) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -23313,11 +21609,9 @@ type KubeLeaseList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -23387,6 +21681,16 @@ func (j *jsiiProxy_KubeLeaseList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeLeaseList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.coordination.v1.LeaseList" API object.
 // Experimental.
@@ -23414,6 +21718,25 @@ func NewKubeLeaseList_Override(k KubeLeaseList, scope constructs.Construct, id *
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeLeaseList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeLeaseList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.coordination.v1.LeaseList".
@@ -23502,57 +21825,6 @@ func (k *jsiiProxy_KubeLeaseList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeLeaseList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeLeaseList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeLeaseList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -23609,11 +21881,9 @@ type KubeLeaseListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -23683,6 +21953,16 @@ func (j *jsiiProxy_KubeLeaseListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeLeaseListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.coordination.v1beta1.LeaseList" API object.
 // Experimental.
@@ -23710,6 +21990,25 @@ func NewKubeLeaseListV1Beta1_Override(k KubeLeaseListV1Beta1, scope constructs.C
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeLeaseListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeLeaseListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.coordination.v1beta1.LeaseList".
@@ -23798,57 +22097,6 @@ func (k *jsiiProxy_KubeLeaseListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeLeaseListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeLeaseListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeLeaseListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -23918,11 +22166,9 @@ type KubeLeaseV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -23992,6 +22238,16 @@ func (j *jsiiProxy_KubeLeaseV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeLeaseV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.coordination.v1beta1.Lease" API object.
 // Experimental.
@@ -24019,6 +22275,25 @@ func NewKubeLeaseV1Beta1_Override(k KubeLeaseV1Beta1, scope constructs.Construct
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeLeaseV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeLeaseV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.coordination.v1beta1.Lease".
@@ -24107,57 +22382,6 @@ func (k *jsiiProxy_KubeLeaseV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeLeaseV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeLeaseV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeLeaseV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -24214,11 +22438,9 @@ type KubeLimitRange interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -24288,6 +22510,16 @@ func (j *jsiiProxy_KubeLimitRange) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeLimitRange) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.LimitRange" API object.
 // Experimental.
@@ -24315,6 +22547,25 @@ func NewKubeLimitRange_Override(k KubeLimitRange, scope constructs.Construct, id
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeLimitRange_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeLimitRange",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.LimitRange".
@@ -24403,57 +22654,6 @@ func (k *jsiiProxy_KubeLimitRange) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeLimitRange) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeLimitRange) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeLimitRange) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -24497,11 +22697,9 @@ type KubeLimitRangeList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -24571,6 +22769,16 @@ func (j *jsiiProxy_KubeLimitRangeList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeLimitRangeList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.LimitRangeList" API object.
 // Experimental.
@@ -24598,6 +22806,25 @@ func NewKubeLimitRangeList_Override(k KubeLimitRangeList, scope constructs.Const
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeLimitRangeList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeLimitRangeList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.LimitRangeList".
@@ -24686,57 +22913,6 @@ func (k *jsiiProxy_KubeLimitRangeList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeLimitRangeList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeLimitRangeList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeLimitRangeList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -24812,11 +22988,9 @@ type KubeLocalSubjectAccessReview interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -24886,6 +23060,16 @@ func (j *jsiiProxy_KubeLocalSubjectAccessReview) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeLocalSubjectAccessReview) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.authorization.v1.LocalSubjectAccessReview" API object.
 // Experimental.
@@ -24913,6 +23097,25 @@ func NewKubeLocalSubjectAccessReview_Override(k KubeLocalSubjectAccessReview, sc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeLocalSubjectAccessReview_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeLocalSubjectAccessReview",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.authorization.v1.LocalSubjectAccessReview".
@@ -25001,57 +23204,6 @@ func (k *jsiiProxy_KubeLocalSubjectAccessReview) AddJsonPatch(ops ...cdk8s.JsonP
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeLocalSubjectAccessReview) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeLocalSubjectAccessReview) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeLocalSubjectAccessReview) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -25111,11 +23263,9 @@ type KubeLocalSubjectAccessReviewV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -25185,6 +23335,16 @@ func (j *jsiiProxy_KubeLocalSubjectAccessReviewV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeLocalSubjectAccessReviewV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.authorization.v1beta1.LocalSubjectAccessReview" API object.
 // Experimental.
@@ -25212,6 +23372,25 @@ func NewKubeLocalSubjectAccessReviewV1Beta1_Override(k KubeLocalSubjectAccessRev
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeLocalSubjectAccessReviewV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeLocalSubjectAccessReviewV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.authorization.v1beta1.LocalSubjectAccessReview".
@@ -25300,57 +23479,6 @@ func (k *jsiiProxy_KubeLocalSubjectAccessReviewV1Beta1) AddJsonPatch(ops ...cdk8
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeLocalSubjectAccessReviewV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeLocalSubjectAccessReviewV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeLocalSubjectAccessReviewV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -25408,11 +23536,9 @@ type KubeMutatingWebhookConfigurationListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -25482,6 +23608,16 @@ func (j *jsiiProxy_KubeMutatingWebhookConfigurationListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeMutatingWebhookConfigurationListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.admissionregistration.v1beta1.MutatingWebhookConfigurationList" API object.
 // Experimental.
@@ -25509,6 +23645,25 @@ func NewKubeMutatingWebhookConfigurationListV1Beta1_Override(k KubeMutatingWebho
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeMutatingWebhookConfigurationListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeMutatingWebhookConfigurationListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.admissionregistration.v1beta1.MutatingWebhookConfigurationList".
@@ -25597,57 +23752,6 @@ func (k *jsiiProxy_KubeMutatingWebhookConfigurationListV1Beta1) AddJsonPatch(ops
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeMutatingWebhookConfigurationListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeMutatingWebhookConfigurationListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeMutatingWebhookConfigurationListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -25704,11 +23808,9 @@ type KubeMutatingWebhookConfigurationV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -25778,6 +23880,16 @@ func (j *jsiiProxy_KubeMutatingWebhookConfigurationV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeMutatingWebhookConfigurationV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.admissionregistration.v1beta1.MutatingWebhookConfiguration" API object.
 // Experimental.
@@ -25805,6 +23917,25 @@ func NewKubeMutatingWebhookConfigurationV1Beta1_Override(k KubeMutatingWebhookCo
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeMutatingWebhookConfigurationV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeMutatingWebhookConfigurationV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.admissionregistration.v1beta1.MutatingWebhookConfiguration".
@@ -25893,57 +24024,6 @@ func (k *jsiiProxy_KubeMutatingWebhookConfigurationV1Beta1) AddJsonPatch(ops ...
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeMutatingWebhookConfigurationV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeMutatingWebhookConfigurationV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeMutatingWebhookConfigurationV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -26002,11 +24082,9 @@ type KubeNamespace interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -26076,6 +24154,16 @@ func (j *jsiiProxy_KubeNamespace) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeNamespace) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.Namespace" API object.
 // Experimental.
@@ -26103,6 +24191,25 @@ func NewKubeNamespace_Override(k KubeNamespace, scope constructs.Construct, id *
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeNamespace_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeNamespace",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.Namespace".
@@ -26191,57 +24298,6 @@ func (k *jsiiProxy_KubeNamespace) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeNamespace) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeNamespace) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeNamespace) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -26285,11 +24341,9 @@ type KubeNamespaceList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -26359,6 +24413,16 @@ func (j *jsiiProxy_KubeNamespaceList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeNamespaceList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.NamespaceList" API object.
 // Experimental.
@@ -26386,6 +24450,25 @@ func NewKubeNamespaceList_Override(k KubeNamespaceList, scope constructs.Constru
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeNamespaceList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeNamespaceList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.NamespaceList".
@@ -26474,57 +24557,6 @@ func (k *jsiiProxy_KubeNamespaceList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeNamespaceList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeNamespaceList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeNamespaceList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -26600,11 +24632,9 @@ type KubeNetworkPolicy interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -26674,6 +24704,16 @@ func (j *jsiiProxy_KubeNetworkPolicy) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeNetworkPolicy) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.networking.v1.NetworkPolicy" API object.
 // Experimental.
@@ -26701,6 +24741,25 @@ func NewKubeNetworkPolicy_Override(k KubeNetworkPolicy, scope constructs.Constru
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeNetworkPolicy_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeNetworkPolicy",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.networking.v1.NetworkPolicy".
@@ -26789,57 +24848,6 @@ func (k *jsiiProxy_KubeNetworkPolicy) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeNetworkPolicy) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeNetworkPolicy) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeNetworkPolicy) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -26883,11 +24891,9 @@ type KubeNetworkPolicyList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -26957,6 +24963,16 @@ func (j *jsiiProxy_KubeNetworkPolicyList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeNetworkPolicyList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.networking.v1.NetworkPolicyList" API object.
 // Experimental.
@@ -26984,6 +25000,25 @@ func NewKubeNetworkPolicyList_Override(k KubeNetworkPolicyList, scope constructs
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeNetworkPolicyList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeNetworkPolicyList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.networking.v1.NetworkPolicyList".
@@ -27072,57 +25107,6 @@ func (k *jsiiProxy_KubeNetworkPolicyList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeNetworkPolicyList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeNetworkPolicyList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeNetworkPolicyList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -27179,11 +25163,9 @@ type KubeNetworkPolicyListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -27253,6 +25235,16 @@ func (j *jsiiProxy_KubeNetworkPolicyListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeNetworkPolicyListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.extensions.v1beta1.NetworkPolicyList" API object.
 // Experimental.
@@ -27280,6 +25272,25 @@ func NewKubeNetworkPolicyListV1Beta1_Override(k KubeNetworkPolicyListV1Beta1, sc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeNetworkPolicyListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeNetworkPolicyListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.extensions.v1beta1.NetworkPolicyList".
@@ -27368,57 +25379,6 @@ func (k *jsiiProxy_KubeNetworkPolicyListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonP
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeNetworkPolicyListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeNetworkPolicyListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeNetworkPolicyListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -27488,11 +25448,9 @@ type KubeNetworkPolicyV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -27562,6 +25520,16 @@ func (j *jsiiProxy_KubeNetworkPolicyV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeNetworkPolicyV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.extensions.v1beta1.NetworkPolicy" API object.
 // Experimental.
@@ -27589,6 +25557,25 @@ func NewKubeNetworkPolicyV1Beta1_Override(k KubeNetworkPolicyV1Beta1, scope cons
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeNetworkPolicyV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeNetworkPolicyV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.extensions.v1beta1.NetworkPolicy".
@@ -27677,57 +25664,6 @@ func (k *jsiiProxy_KubeNetworkPolicyV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeNetworkPolicyV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeNetworkPolicyV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeNetworkPolicyV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -27786,11 +25722,9 @@ type KubeNode interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -27860,6 +25794,16 @@ func (j *jsiiProxy_KubeNode) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeNode) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.Node" API object.
 // Experimental.
@@ -27887,6 +25831,25 @@ func NewKubeNode_Override(k KubeNode, scope constructs.Construct, id *string, pr
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeNode_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeNode",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.Node".
@@ -27975,57 +25938,6 @@ func (k *jsiiProxy_KubeNode) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeNode) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeNode) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeNode) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -28069,11 +25981,9 @@ type KubeNodeList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -28143,6 +26053,16 @@ func (j *jsiiProxy_KubeNodeList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeNodeList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.NodeList" API object.
 // Experimental.
@@ -28170,6 +26090,25 @@ func NewKubeNodeList_Override(k KubeNodeList, scope constructs.Construct, id *st
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeNodeList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeNodeList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.NodeList".
@@ -28258,57 +26197,6 @@ func (k *jsiiProxy_KubeNodeList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeNodeList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeNodeList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeNodeList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -28384,11 +26272,9 @@ type KubePersistentVolume interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -28458,6 +26344,16 @@ func (j *jsiiProxy_KubePersistentVolume) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePersistentVolume) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.PersistentVolume" API object.
 // Experimental.
@@ -28485,6 +26381,25 @@ func NewKubePersistentVolume_Override(k KubePersistentVolume, scope constructs.C
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePersistentVolume_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePersistentVolume",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.PersistentVolume".
@@ -28573,57 +26488,6 @@ func (k *jsiiProxy_KubePersistentVolume) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePersistentVolume) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePersistentVolume) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePersistentVolume) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -28667,11 +26531,9 @@ type KubePersistentVolumeClaim interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -28741,6 +26603,16 @@ func (j *jsiiProxy_KubePersistentVolumeClaim) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePersistentVolumeClaim) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.PersistentVolumeClaim" API object.
 // Experimental.
@@ -28768,6 +26640,25 @@ func NewKubePersistentVolumeClaim_Override(k KubePersistentVolumeClaim, scope co
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePersistentVolumeClaim_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePersistentVolumeClaim",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.PersistentVolumeClaim".
@@ -28856,57 +26747,6 @@ func (k *jsiiProxy_KubePersistentVolumeClaim) AddJsonPatch(ops ...cdk8s.JsonPatc
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePersistentVolumeClaim) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePersistentVolumeClaim) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePersistentVolumeClaim) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -28950,11 +26790,9 @@ type KubePersistentVolumeClaimList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -29024,6 +26862,16 @@ func (j *jsiiProxy_KubePersistentVolumeClaimList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePersistentVolumeClaimList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.PersistentVolumeClaimList" API object.
 // Experimental.
@@ -29051,6 +26899,25 @@ func NewKubePersistentVolumeClaimList_Override(k KubePersistentVolumeClaimList, 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePersistentVolumeClaimList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePersistentVolumeClaimList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.PersistentVolumeClaimList".
@@ -29139,57 +27006,6 @@ func (k *jsiiProxy_KubePersistentVolumeClaimList) AddJsonPatch(ops ...cdk8s.Json
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePersistentVolumeClaimList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePersistentVolumeClaimList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePersistentVolumeClaimList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -29263,11 +27079,9 @@ type KubePersistentVolumeList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -29337,6 +27151,16 @@ func (j *jsiiProxy_KubePersistentVolumeList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePersistentVolumeList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.PersistentVolumeList" API object.
 // Experimental.
@@ -29364,6 +27188,25 @@ func NewKubePersistentVolumeList_Override(k KubePersistentVolumeList, scope cons
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePersistentVolumeList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePersistentVolumeList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.PersistentVolumeList".
@@ -29452,57 +27295,6 @@ func (k *jsiiProxy_KubePersistentVolumeList) AddJsonPatch(ops ...cdk8s.JsonPatch
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePersistentVolumeList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePersistentVolumeList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePersistentVolumeList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -29580,11 +27372,9 @@ type KubePod interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -29654,6 +27444,16 @@ func (j *jsiiProxy_KubePod) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePod) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.Pod" API object.
 // Experimental.
@@ -29681,6 +27481,25 @@ func NewKubePod_Override(k KubePod, scope constructs.Construct, id *string, prop
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePod_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePod",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.Pod".
@@ -29769,57 +27588,6 @@ func (k *jsiiProxy_KubePod) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePod) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePod) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePod) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -29863,11 +27631,9 @@ type KubePodDisruptionBudgetListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -29937,6 +27703,16 @@ func (j *jsiiProxy_KubePodDisruptionBudgetListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePodDisruptionBudgetListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.policy.v1beta1.PodDisruptionBudgetList" API object.
 // Experimental.
@@ -29964,6 +27740,25 @@ func NewKubePodDisruptionBudgetListV1Beta1_Override(k KubePodDisruptionBudgetLis
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePodDisruptionBudgetListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePodDisruptionBudgetListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.policy.v1beta1.PodDisruptionBudgetList".
@@ -30052,57 +27847,6 @@ func (k *jsiiProxy_KubePodDisruptionBudgetListV1Beta1) AddJsonPatch(ops ...cdk8s
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePodDisruptionBudgetListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePodDisruptionBudgetListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePodDisruptionBudgetListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -30155,11 +27899,9 @@ type KubePodDisruptionBudgetV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -30229,6 +27971,16 @@ func (j *jsiiProxy_KubePodDisruptionBudgetV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePodDisruptionBudgetV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.policy.v1beta1.PodDisruptionBudget" API object.
 // Experimental.
@@ -30256,6 +28008,25 @@ func NewKubePodDisruptionBudgetV1Beta1_Override(k KubePodDisruptionBudgetV1Beta1
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePodDisruptionBudgetV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePodDisruptionBudgetV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.policy.v1beta1.PodDisruptionBudget".
@@ -30344,57 +28115,6 @@ func (k *jsiiProxy_KubePodDisruptionBudgetV1Beta1) AddJsonPatch(ops ...cdk8s.Jso
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePodDisruptionBudgetV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePodDisruptionBudgetV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePodDisruptionBudgetV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -30448,11 +28168,9 @@ type KubePodList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -30522,6 +28240,16 @@ func (j *jsiiProxy_KubePodList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePodList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.PodList" API object.
 // Experimental.
@@ -30549,6 +28277,25 @@ func NewKubePodList_Override(k KubePodList, scope constructs.Construct, id *stri
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePodList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePodList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.PodList".
@@ -30637,57 +28384,6 @@ func (k *jsiiProxy_KubePodList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePodList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePodList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePodList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -30746,11 +28442,9 @@ type KubePodPresetListV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -30820,6 +28514,16 @@ func (j *jsiiProxy_KubePodPresetListV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePodPresetListV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.settings.v1alpha1.PodPresetList" API object.
 // Experimental.
@@ -30847,6 +28551,25 @@ func NewKubePodPresetListV1Alpha1_Override(k KubePodPresetListV1Alpha1, scope co
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePodPresetListV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePodPresetListV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.settings.v1alpha1.PodPresetList".
@@ -30935,57 +28658,6 @@ func (k *jsiiProxy_KubePodPresetListV1Alpha1) AddJsonPatch(ops ...cdk8s.JsonPatc
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePodPresetListV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePodPresetListV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePodPresetListV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -31042,11 +28714,9 @@ type KubePodPresetV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -31116,6 +28786,16 @@ func (j *jsiiProxy_KubePodPresetV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePodPresetV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.settings.v1alpha1.PodPreset" API object.
 // Experimental.
@@ -31143,6 +28823,25 @@ func NewKubePodPresetV1Alpha1_Override(k KubePodPresetV1Alpha1, scope constructs
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePodPresetV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePodPresetV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.settings.v1alpha1.PodPreset".
@@ -31231,57 +28930,6 @@ func (k *jsiiProxy_KubePodPresetV1Alpha1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePodPresetV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePodPresetV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePodPresetV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -31351,11 +28999,9 @@ type KubePodSecurityPolicyListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -31425,6 +29071,16 @@ func (j *jsiiProxy_KubePodSecurityPolicyListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePodSecurityPolicyListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.policy.v1beta1.PodSecurityPolicyList" API object.
 // Experimental.
@@ -31452,6 +29108,25 @@ func NewKubePodSecurityPolicyListV1Beta1_Override(k KubePodSecurityPolicyListV1B
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePodSecurityPolicyListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePodSecurityPolicyListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.policy.v1beta1.PodSecurityPolicyList".
@@ -31540,57 +29215,6 @@ func (k *jsiiProxy_KubePodSecurityPolicyListV1Beta1) AddJsonPatch(ops ...cdk8s.J
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePodSecurityPolicyListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePodSecurityPolicyListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePodSecurityPolicyListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -31647,11 +29271,9 @@ type KubePodSecurityPolicyV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -31721,6 +29343,16 @@ func (j *jsiiProxy_KubePodSecurityPolicyV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePodSecurityPolicyV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.policy.v1beta1.PodSecurityPolicy" API object.
 // Experimental.
@@ -31748,6 +29380,25 @@ func NewKubePodSecurityPolicyV1Beta1_Override(k KubePodSecurityPolicyV1Beta1, sc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePodSecurityPolicyV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePodSecurityPolicyV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.policy.v1beta1.PodSecurityPolicy".
@@ -31836,57 +29487,6 @@ func (k *jsiiProxy_KubePodSecurityPolicyV1Beta1) AddJsonPatch(ops ...cdk8s.JsonP
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePodSecurityPolicyV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePodSecurityPolicyV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePodSecurityPolicyV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -31943,11 +29543,9 @@ type KubePodTemplate interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -32017,6 +29615,16 @@ func (j *jsiiProxy_KubePodTemplate) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePodTemplate) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.PodTemplate" API object.
 // Experimental.
@@ -32044,6 +29652,25 @@ func NewKubePodTemplate_Override(k KubePodTemplate, scope constructs.Construct, 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePodTemplate_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePodTemplate",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.PodTemplate".
@@ -32132,57 +29759,6 @@ func (k *jsiiProxy_KubePodTemplate) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePodTemplate) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePodTemplate) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePodTemplate) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -32226,11 +29802,9 @@ type KubePodTemplateList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -32300,6 +29874,16 @@ func (j *jsiiProxy_KubePodTemplateList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePodTemplateList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.PodTemplateList" API object.
 // Experimental.
@@ -32327,6 +29911,25 @@ func NewKubePodTemplateList_Override(k KubePodTemplateList, scope constructs.Con
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePodTemplateList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePodTemplateList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.PodTemplateList".
@@ -32415,57 +30018,6 @@ func (k *jsiiProxy_KubePodTemplateList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePodTemplateList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePodTemplateList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePodTemplateList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -32539,11 +30091,9 @@ type KubePriorityClass interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -32613,6 +30163,16 @@ func (j *jsiiProxy_KubePriorityClass) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePriorityClass) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.scheduling.v1.PriorityClass" API object.
 // Experimental.
@@ -32640,6 +30200,25 @@ func NewKubePriorityClass_Override(k KubePriorityClass, scope constructs.Constru
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePriorityClass_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePriorityClass",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.scheduling.v1.PriorityClass".
@@ -32728,57 +30307,6 @@ func (k *jsiiProxy_KubePriorityClass) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePriorityClass) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePriorityClass) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePriorityClass) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -32822,11 +30350,9 @@ type KubePriorityClassList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -32896,6 +30422,16 @@ func (j *jsiiProxy_KubePriorityClassList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePriorityClassList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.scheduling.v1.PriorityClassList" API object.
 // Experimental.
@@ -32923,6 +30459,25 @@ func NewKubePriorityClassList_Override(k KubePriorityClassList, scope constructs
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePriorityClassList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePriorityClassList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.scheduling.v1.PriorityClassList".
@@ -33011,57 +30566,6 @@ func (k *jsiiProxy_KubePriorityClassList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePriorityClassList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePriorityClassList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePriorityClassList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -33116,11 +30620,9 @@ type KubePriorityClassListV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -33190,6 +30692,16 @@ func (j *jsiiProxy_KubePriorityClassListV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePriorityClassListV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.scheduling.v1alpha1.PriorityClassList" API object.
 // Experimental.
@@ -33217,6 +30729,25 @@ func NewKubePriorityClassListV1Alpha1_Override(k KubePriorityClassListV1Alpha1, 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePriorityClassListV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePriorityClassListV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.scheduling.v1alpha1.PriorityClassList".
@@ -33305,57 +30836,6 @@ func (k *jsiiProxy_KubePriorityClassListV1Alpha1) AddJsonPatch(ops ...cdk8s.Json
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePriorityClassListV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePriorityClassListV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePriorityClassListV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -33410,11 +30890,9 @@ type KubePriorityClassListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -33484,6 +30962,16 @@ func (j *jsiiProxy_KubePriorityClassListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePriorityClassListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.scheduling.v1beta1.PriorityClassList" API object.
 // Experimental.
@@ -33511,6 +30999,25 @@ func NewKubePriorityClassListV1Beta1_Override(k KubePriorityClassListV1Beta1, sc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePriorityClassListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePriorityClassListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.scheduling.v1beta1.PriorityClassList".
@@ -33599,57 +31106,6 @@ func (k *jsiiProxy_KubePriorityClassListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonP
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePriorityClassListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePriorityClassListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePriorityClassListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -33734,11 +31190,9 @@ type KubePriorityClassV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -33808,6 +31262,16 @@ func (j *jsiiProxy_KubePriorityClassV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePriorityClassV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.scheduling.v1alpha1.PriorityClass" API object.
 // Experimental.
@@ -33835,6 +31299,25 @@ func NewKubePriorityClassV1Alpha1_Override(k KubePriorityClassV1Alpha1, scope co
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePriorityClassV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePriorityClassV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.scheduling.v1alpha1.PriorityClass".
@@ -33923,57 +31406,6 @@ func (k *jsiiProxy_KubePriorityClassV1Alpha1) AddJsonPatch(ops ...cdk8s.JsonPatc
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePriorityClassV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePriorityClassV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePriorityClassV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -34045,11 +31477,9 @@ type KubePriorityClassV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -34119,6 +31549,16 @@ func (j *jsiiProxy_KubePriorityClassV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubePriorityClassV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.scheduling.v1beta1.PriorityClass" API object.
 // Experimental.
@@ -34146,6 +31586,25 @@ func NewKubePriorityClassV1Beta1_Override(k KubePriorityClassV1Beta1, scope cons
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubePriorityClassV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubePriorityClassV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.scheduling.v1beta1.PriorityClass".
@@ -34234,57 +31693,6 @@ func (k *jsiiProxy_KubePriorityClassV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubePriorityClassV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubePriorityClassV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubePriorityClassV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -34356,11 +31764,9 @@ type KubeReplicaSet interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -34430,6 +31836,16 @@ func (j *jsiiProxy_KubeReplicaSet) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeReplicaSet) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1.ReplicaSet" API object.
 // Experimental.
@@ -34457,6 +31873,25 @@ func NewKubeReplicaSet_Override(k KubeReplicaSet, scope constructs.Construct, id
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeReplicaSet_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeReplicaSet",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1.ReplicaSet".
@@ -34545,57 +31980,6 @@ func (k *jsiiProxy_KubeReplicaSet) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeReplicaSet) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeReplicaSet) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeReplicaSet) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -34639,11 +32023,9 @@ type KubeReplicaSetList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -34713,6 +32095,16 @@ func (j *jsiiProxy_KubeReplicaSetList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeReplicaSetList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1.ReplicaSetList" API object.
 // Experimental.
@@ -34740,6 +32132,25 @@ func NewKubeReplicaSetList_Override(k KubeReplicaSetList, scope constructs.Const
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeReplicaSetList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeReplicaSetList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1.ReplicaSetList".
@@ -34828,57 +32239,6 @@ func (k *jsiiProxy_KubeReplicaSetList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeReplicaSetList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeReplicaSetList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeReplicaSetList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -34937,11 +32297,9 @@ type KubeReplicaSetListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -35011,6 +32369,16 @@ func (j *jsiiProxy_KubeReplicaSetListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeReplicaSetListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.extensions.v1beta1.ReplicaSetList" API object.
 // Experimental.
@@ -35038,6 +32406,25 @@ func NewKubeReplicaSetListV1Beta1_Override(k KubeReplicaSetListV1Beta1, scope co
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeReplicaSetListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeReplicaSetListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.extensions.v1beta1.ReplicaSetList".
@@ -35126,57 +32513,6 @@ func (k *jsiiProxy_KubeReplicaSetListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatc
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeReplicaSetListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeReplicaSetListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeReplicaSetListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -35235,11 +32571,9 @@ type KubeReplicaSetListV1Beta2 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -35309,6 +32643,16 @@ func (j *jsiiProxy_KubeReplicaSetListV1Beta2) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeReplicaSetListV1Beta2) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1beta2.ReplicaSetList" API object.
 // Experimental.
@@ -35336,6 +32680,25 @@ func NewKubeReplicaSetListV1Beta2_Override(k KubeReplicaSetListV1Beta2, scope co
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeReplicaSetListV1Beta2_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeReplicaSetListV1Beta2",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1beta2.ReplicaSetList".
@@ -35424,57 +32787,6 @@ func (k *jsiiProxy_KubeReplicaSetListV1Beta2) AddJsonPatch(ops ...cdk8s.JsonPatc
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeReplicaSetListV1Beta2) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeReplicaSetListV1Beta2) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeReplicaSetListV1Beta2) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -35550,11 +32862,9 @@ type KubeReplicaSetV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -35624,6 +32934,16 @@ func (j *jsiiProxy_KubeReplicaSetV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeReplicaSetV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.extensions.v1beta1.ReplicaSet" API object.
 // Experimental.
@@ -35651,6 +32971,25 @@ func NewKubeReplicaSetV1Beta1_Override(k KubeReplicaSetV1Beta1, scope constructs
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeReplicaSetV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeReplicaSetV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.extensions.v1beta1.ReplicaSet".
@@ -35739,57 +33078,6 @@ func (k *jsiiProxy_KubeReplicaSetV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeReplicaSetV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeReplicaSetV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeReplicaSetV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -35852,11 +33140,9 @@ type KubeReplicaSetV1Beta2 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -35926,6 +33212,16 @@ func (j *jsiiProxy_KubeReplicaSetV1Beta2) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeReplicaSetV1Beta2) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1beta2.ReplicaSet" API object.
 // Experimental.
@@ -35953,6 +33249,25 @@ func NewKubeReplicaSetV1Beta2_Override(k KubeReplicaSetV1Beta2, scope constructs
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeReplicaSetV1Beta2_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeReplicaSetV1Beta2",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1beta2.ReplicaSet".
@@ -36041,57 +33356,6 @@ func (k *jsiiProxy_KubeReplicaSetV1Beta2) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeReplicaSetV1Beta2) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeReplicaSetV1Beta2) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeReplicaSetV1Beta2) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -36152,11 +33416,9 @@ type KubeReplicationController interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -36226,6 +33488,16 @@ func (j *jsiiProxy_KubeReplicationController) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeReplicationController) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.ReplicationController" API object.
 // Experimental.
@@ -36253,6 +33525,25 @@ func NewKubeReplicationController_Override(k KubeReplicationController, scope co
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeReplicationController_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeReplicationController",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.ReplicationController".
@@ -36341,57 +33632,6 @@ func (k *jsiiProxy_KubeReplicationController) AddJsonPatch(ops ...cdk8s.JsonPatc
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeReplicationController) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeReplicationController) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeReplicationController) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -36435,11 +33675,9 @@ type KubeReplicationControllerList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -36509,6 +33747,16 @@ func (j *jsiiProxy_KubeReplicationControllerList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeReplicationControllerList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.ReplicationControllerList" API object.
 // Experimental.
@@ -36536,6 +33784,25 @@ func NewKubeReplicationControllerList_Override(k KubeReplicationControllerList, 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeReplicationControllerList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeReplicationControllerList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.ReplicationControllerList".
@@ -36624,57 +33891,6 @@ func (k *jsiiProxy_KubeReplicationControllerList) AddJsonPatch(ops ...cdk8s.Json
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeReplicationControllerList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeReplicationControllerList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeReplicationControllerList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -36748,11 +33964,9 @@ type KubeResourceQuota interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -36822,6 +34036,16 @@ func (j *jsiiProxy_KubeResourceQuota) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeResourceQuota) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.ResourceQuota" API object.
 // Experimental.
@@ -36849,6 +34073,25 @@ func NewKubeResourceQuota_Override(k KubeResourceQuota, scope constructs.Constru
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeResourceQuota_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeResourceQuota",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.ResourceQuota".
@@ -36937,57 +34180,6 @@ func (k *jsiiProxy_KubeResourceQuota) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeResourceQuota) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeResourceQuota) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeResourceQuota) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -37031,11 +34223,9 @@ type KubeResourceQuotaList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -37105,6 +34295,16 @@ func (j *jsiiProxy_KubeResourceQuotaList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeResourceQuotaList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.ResourceQuotaList" API object.
 // Experimental.
@@ -37132,6 +34332,25 @@ func NewKubeResourceQuotaList_Override(k KubeResourceQuotaList, scope constructs
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeResourceQuotaList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeResourceQuotaList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.ResourceQuotaList".
@@ -37220,57 +34439,6 @@ func (k *jsiiProxy_KubeResourceQuotaList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeResourceQuotaList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeResourceQuotaList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeResourceQuotaList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -37344,11 +34512,9 @@ type KubeRole interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -37418,6 +34584,16 @@ func (j *jsiiProxy_KubeRole) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeRole) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1.Role" API object.
 // Experimental.
@@ -37445,6 +34621,25 @@ func NewKubeRole_Override(k KubeRole, scope constructs.Construct, id *string, pr
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeRole_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeRole",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1.Role".
@@ -37533,57 +34728,6 @@ func (k *jsiiProxy_KubeRole) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeRole) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeRole) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeRole) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -37629,11 +34773,9 @@ type KubeRoleBinding interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -37703,6 +34845,16 @@ func (j *jsiiProxy_KubeRoleBinding) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeRoleBinding) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1.RoleBinding" API object.
 // Experimental.
@@ -37730,6 +34882,25 @@ func NewKubeRoleBinding_Override(k KubeRoleBinding, scope constructs.Construct, 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeRoleBinding_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeRoleBinding",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1.RoleBinding".
@@ -37818,57 +34989,6 @@ func (k *jsiiProxy_KubeRoleBinding) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeRoleBinding) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeRoleBinding) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeRoleBinding) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -37912,11 +35032,9 @@ type KubeRoleBindingList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -37986,6 +35104,16 @@ func (j *jsiiProxy_KubeRoleBindingList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeRoleBindingList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1.RoleBindingList" API object.
 // Experimental.
@@ -38013,6 +35141,25 @@ func NewKubeRoleBindingList_Override(k KubeRoleBindingList, scope constructs.Con
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeRoleBindingList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeRoleBindingList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1.RoleBindingList".
@@ -38101,57 +35248,6 @@ func (k *jsiiProxy_KubeRoleBindingList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeRoleBindingList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeRoleBindingList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeRoleBindingList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -38206,11 +35302,9 @@ type KubeRoleBindingListV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -38280,6 +35374,16 @@ func (j *jsiiProxy_KubeRoleBindingListV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeRoleBindingListV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1alpha1.RoleBindingList" API object.
 // Experimental.
@@ -38307,6 +35411,25 @@ func NewKubeRoleBindingListV1Alpha1_Override(k KubeRoleBindingListV1Alpha1, scop
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeRoleBindingListV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeRoleBindingListV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1alpha1.RoleBindingList".
@@ -38395,57 +35518,6 @@ func (k *jsiiProxy_KubeRoleBindingListV1Alpha1) AddJsonPatch(ops ...cdk8s.JsonPa
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeRoleBindingListV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeRoleBindingListV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeRoleBindingListV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -38500,11 +35572,9 @@ type KubeRoleBindingListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -38574,6 +35644,16 @@ func (j *jsiiProxy_KubeRoleBindingListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeRoleBindingListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1beta1.RoleBindingList" API object.
 // Experimental.
@@ -38601,6 +35681,25 @@ func NewKubeRoleBindingListV1Beta1_Override(k KubeRoleBindingListV1Beta1, scope 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeRoleBindingListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeRoleBindingListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1beta1.RoleBindingList".
@@ -38689,57 +35788,6 @@ func (k *jsiiProxy_KubeRoleBindingListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPat
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeRoleBindingListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeRoleBindingListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeRoleBindingListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -38814,11 +35862,9 @@ type KubeRoleBindingV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -38888,6 +35934,16 @@ func (j *jsiiProxy_KubeRoleBindingV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeRoleBindingV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1alpha1.RoleBinding" API object.
 // Experimental.
@@ -38915,6 +35971,25 @@ func NewKubeRoleBindingV1Alpha1_Override(k KubeRoleBindingV1Alpha1, scope constr
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeRoleBindingV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeRoleBindingV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1alpha1.RoleBinding".
@@ -39003,57 +36078,6 @@ func (k *jsiiProxy_KubeRoleBindingV1Alpha1) AddJsonPatch(ops ...cdk8s.JsonPatch)
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeRoleBindingV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeRoleBindingV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeRoleBindingV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -39117,11 +36141,9 @@ type KubeRoleBindingV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -39191,6 +36213,16 @@ func (j *jsiiProxy_KubeRoleBindingV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeRoleBindingV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1beta1.RoleBinding" API object.
 // Experimental.
@@ -39218,6 +36250,25 @@ func NewKubeRoleBindingV1Beta1_Override(k KubeRoleBindingV1Beta1, scope construc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeRoleBindingV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeRoleBindingV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1beta1.RoleBinding".
@@ -39306,57 +36357,6 @@ func (k *jsiiProxy_KubeRoleBindingV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) 
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeRoleBindingV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeRoleBindingV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeRoleBindingV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -39418,11 +36418,9 @@ type KubeRoleList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -39492,6 +36490,16 @@ func (j *jsiiProxy_KubeRoleList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeRoleList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1.RoleList" API object.
 // Experimental.
@@ -39519,6 +36527,25 @@ func NewKubeRoleList_Override(k KubeRoleList, scope constructs.Construct, id *st
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeRoleList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeRoleList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1.RoleList".
@@ -39607,57 +36634,6 @@ func (k *jsiiProxy_KubeRoleList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeRoleList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeRoleList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeRoleList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -39712,11 +36688,9 @@ type KubeRoleListV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -39786,6 +36760,16 @@ func (j *jsiiProxy_KubeRoleListV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeRoleListV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1alpha1.RoleList" API object.
 // Experimental.
@@ -39813,6 +36797,25 @@ func NewKubeRoleListV1Alpha1_Override(k KubeRoleListV1Alpha1, scope constructs.C
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeRoleListV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeRoleListV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1alpha1.RoleList".
@@ -39901,57 +36904,6 @@ func (k *jsiiProxy_KubeRoleListV1Alpha1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeRoleListV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeRoleListV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeRoleListV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -40006,11 +36958,9 @@ type KubeRoleListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -40080,6 +37030,16 @@ func (j *jsiiProxy_KubeRoleListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeRoleListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1beta1.RoleList" API object.
 // Experimental.
@@ -40107,6 +37067,25 @@ func NewKubeRoleListV1Beta1_Override(k KubeRoleListV1Beta1, scope constructs.Con
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeRoleListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeRoleListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1beta1.RoleList".
@@ -40195,57 +37174,6 @@ func (k *jsiiProxy_KubeRoleListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeRoleListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeRoleListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeRoleListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -40311,11 +37239,9 @@ type KubeRoleV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -40385,6 +37311,16 @@ func (j *jsiiProxy_KubeRoleV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeRoleV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1alpha1.Role" API object.
 // Experimental.
@@ -40412,6 +37348,25 @@ func NewKubeRoleV1Alpha1_Override(k KubeRoleV1Alpha1, scope constructs.Construct
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeRoleV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeRoleV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1alpha1.Role".
@@ -40500,57 +37455,6 @@ func (k *jsiiProxy_KubeRoleV1Alpha1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeRoleV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeRoleV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeRoleV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -40605,11 +37509,9 @@ type KubeRoleV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -40679,6 +37581,16 @@ func (j *jsiiProxy_KubeRoleV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeRoleV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.rbac.v1beta1.Role" API object.
 // Experimental.
@@ -40706,6 +37618,25 @@ func NewKubeRoleV1Beta1_Override(k KubeRoleV1Beta1, scope constructs.Construct, 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeRoleV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeRoleV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.rbac.v1beta1.Role".
@@ -40794,57 +37725,6 @@ func (k *jsiiProxy_KubeRoleV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeRoleV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeRoleV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeRoleV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -40899,11 +37779,9 @@ type KubeRuntimeClassListV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -40973,6 +37851,16 @@ func (j *jsiiProxy_KubeRuntimeClassListV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeRuntimeClassListV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.node.v1alpha1.RuntimeClassList" API object.
 // Experimental.
@@ -41000,6 +37888,25 @@ func NewKubeRuntimeClassListV1Alpha1_Override(k KubeRuntimeClassListV1Alpha1, sc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeRuntimeClassListV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeRuntimeClassListV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.node.v1alpha1.RuntimeClassList".
@@ -41088,57 +37995,6 @@ func (k *jsiiProxy_KubeRuntimeClassListV1Alpha1) AddJsonPatch(ops ...cdk8s.JsonP
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeRuntimeClassListV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeRuntimeClassListV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeRuntimeClassListV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -41195,11 +38051,9 @@ type KubeRuntimeClassListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -41269,6 +38123,16 @@ func (j *jsiiProxy_KubeRuntimeClassListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeRuntimeClassListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.node.v1beta1.RuntimeClassList" API object.
 // Experimental.
@@ -41296,6 +38160,25 @@ func NewKubeRuntimeClassListV1Beta1_Override(k KubeRuntimeClassListV1Beta1, scop
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeRuntimeClassListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeRuntimeClassListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.node.v1beta1.RuntimeClassList".
@@ -41384,57 +38267,6 @@ func (k *jsiiProxy_KubeRuntimeClassListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPa
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeRuntimeClassListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeRuntimeClassListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeRuntimeClassListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -41493,11 +38325,9 @@ type KubeRuntimeClassV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -41567,6 +38397,16 @@ func (j *jsiiProxy_KubeRuntimeClassV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeRuntimeClassV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.node.v1alpha1.RuntimeClass" API object.
 // Experimental.
@@ -41594,6 +38434,25 @@ func NewKubeRuntimeClassV1Alpha1_Override(k KubeRuntimeClassV1Alpha1, scope cons
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeRuntimeClassV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeRuntimeClassV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.node.v1alpha1.RuntimeClass".
@@ -41682,57 +38541,6 @@ func (k *jsiiProxy_KubeRuntimeClassV1Alpha1) AddJsonPatch(ops ...cdk8s.JsonPatch
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeRuntimeClassV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeRuntimeClassV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeRuntimeClassV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -41791,11 +38599,9 @@ type KubeRuntimeClassV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -41865,6 +38671,16 @@ func (j *jsiiProxy_KubeRuntimeClassV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeRuntimeClassV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.node.v1beta1.RuntimeClass" API object.
 // Experimental.
@@ -41892,6 +38708,25 @@ func NewKubeRuntimeClassV1Beta1_Override(k KubeRuntimeClassV1Beta1, scope constr
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeRuntimeClassV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeRuntimeClassV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.node.v1beta1.RuntimeClass".
@@ -41980,57 +38815,6 @@ func (k *jsiiProxy_KubeRuntimeClassV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch)
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeRuntimeClassV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeRuntimeClassV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeRuntimeClassV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -42089,11 +38873,9 @@ type KubeScale interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -42163,6 +38945,16 @@ func (j *jsiiProxy_KubeScale) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeScale) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.autoscaling.v1.Scale" API object.
 // Experimental.
@@ -42190,6 +38982,25 @@ func NewKubeScale_Override(k KubeScale, scope constructs.Construct, id *string, 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeScale_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeScale",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.autoscaling.v1.Scale".
@@ -42278,57 +39089,6 @@ func (k *jsiiProxy_KubeScale) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeScale) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeScale) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeScale) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -42387,11 +39147,9 @@ type KubeScaleV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -42461,6 +39219,16 @@ func (j *jsiiProxy_KubeScaleV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeScaleV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.extensions.v1beta1.Scale" API object.
 // Experimental.
@@ -42488,6 +39256,25 @@ func NewKubeScaleV1Beta1_Override(k KubeScaleV1Beta1, scope constructs.Construct
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeScaleV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeScaleV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.extensions.v1beta1.Scale".
@@ -42576,57 +39363,6 @@ func (k *jsiiProxy_KubeScaleV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeScaleV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeScaleV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeScaleV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -42685,11 +39421,9 @@ type KubeScaleV1Beta2 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -42759,6 +39493,16 @@ func (j *jsiiProxy_KubeScaleV1Beta2) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeScaleV1Beta2) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1beta2.Scale" API object.
 // Experimental.
@@ -42786,6 +39530,25 @@ func NewKubeScaleV1Beta2_Override(k KubeScaleV1Beta2, scope constructs.Construct
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeScaleV1Beta2_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeScaleV1Beta2",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1beta2.Scale".
@@ -42874,57 +39637,6 @@ func (k *jsiiProxy_KubeScaleV1Beta2) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeScaleV1Beta2) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeScaleV1Beta2) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeScaleV1Beta2) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -42985,11 +39697,9 @@ type KubeSecret interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -43059,6 +39769,16 @@ func (j *jsiiProxy_KubeSecret) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeSecret) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.Secret" API object.
 // Experimental.
@@ -43086,6 +39806,25 @@ func NewKubeSecret_Override(k KubeSecret, scope constructs.Construct, id *string
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeSecret_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeSecret",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.Secret".
@@ -43174,57 +39913,6 @@ func (k *jsiiProxy_KubeSecret) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeSecret) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeSecret) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeSecret) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -43268,11 +39956,9 @@ type KubeSecretList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -43342,6 +40028,16 @@ func (j *jsiiProxy_KubeSecretList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeSecretList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.SecretList" API object.
 // Experimental.
@@ -43369,6 +40065,25 @@ func NewKubeSecretList_Override(k KubeSecretList, scope constructs.Construct, id
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeSecretList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeSecretList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.SecretList".
@@ -43457,57 +40172,6 @@ func (k *jsiiProxy_KubeSecretList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeSecretList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeSecretList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeSecretList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -43593,11 +40257,9 @@ type KubeSelfSubjectAccessReview interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -43667,6 +40329,16 @@ func (j *jsiiProxy_KubeSelfSubjectAccessReview) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeSelfSubjectAccessReview) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.authorization.v1.SelfSubjectAccessReview" API object.
 // Experimental.
@@ -43694,6 +40366,25 @@ func NewKubeSelfSubjectAccessReview_Override(k KubeSelfSubjectAccessReview, scop
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeSelfSubjectAccessReview_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeSelfSubjectAccessReview",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.authorization.v1.SelfSubjectAccessReview".
@@ -43782,57 +40473,6 @@ func (k *jsiiProxy_KubeSelfSubjectAccessReview) AddJsonPatch(ops ...cdk8s.JsonPa
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeSelfSubjectAccessReview) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeSelfSubjectAccessReview) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeSelfSubjectAccessReview) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -43892,11 +40532,9 @@ type KubeSelfSubjectAccessReviewV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -43966,6 +40604,16 @@ func (j *jsiiProxy_KubeSelfSubjectAccessReviewV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeSelfSubjectAccessReviewV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.authorization.v1beta1.SelfSubjectAccessReview" API object.
 // Experimental.
@@ -43993,6 +40641,25 @@ func NewKubeSelfSubjectAccessReviewV1Beta1_Override(k KubeSelfSubjectAccessRevie
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeSelfSubjectAccessReviewV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeSelfSubjectAccessReviewV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.authorization.v1beta1.SelfSubjectAccessReview".
@@ -44081,57 +40748,6 @@ func (k *jsiiProxy_KubeSelfSubjectAccessReviewV1Beta1) AddJsonPatch(ops ...cdk8s
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeSelfSubjectAccessReviewV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeSelfSubjectAccessReviewV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeSelfSubjectAccessReviewV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -44191,11 +40807,9 @@ type KubeSelfSubjectRulesReview interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -44265,6 +40879,16 @@ func (j *jsiiProxy_KubeSelfSubjectRulesReview) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeSelfSubjectRulesReview) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.authorization.v1.SelfSubjectRulesReview" API object.
 // Experimental.
@@ -44292,6 +40916,25 @@ func NewKubeSelfSubjectRulesReview_Override(k KubeSelfSubjectRulesReview, scope 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeSelfSubjectRulesReview_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeSelfSubjectRulesReview",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.authorization.v1.SelfSubjectRulesReview".
@@ -44380,57 +41023,6 @@ func (k *jsiiProxy_KubeSelfSubjectRulesReview) AddJsonPatch(ops ...cdk8s.JsonPat
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeSelfSubjectRulesReview) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeSelfSubjectRulesReview) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeSelfSubjectRulesReview) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -44488,11 +41080,9 @@ type KubeSelfSubjectRulesReviewV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -44562,6 +41152,16 @@ func (j *jsiiProxy_KubeSelfSubjectRulesReviewV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeSelfSubjectRulesReviewV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.authorization.v1beta1.SelfSubjectRulesReview" API object.
 // Experimental.
@@ -44589,6 +41189,25 @@ func NewKubeSelfSubjectRulesReviewV1Beta1_Override(k KubeSelfSubjectRulesReviewV
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeSelfSubjectRulesReviewV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeSelfSubjectRulesReviewV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.authorization.v1beta1.SelfSubjectRulesReview".
@@ -44677,57 +41296,6 @@ func (k *jsiiProxy_KubeSelfSubjectRulesReviewV1Beta1) AddJsonPatch(ops ...cdk8s.
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeSelfSubjectRulesReviewV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeSelfSubjectRulesReviewV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeSelfSubjectRulesReviewV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -44783,11 +41351,9 @@ type KubeService interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -44857,6 +41423,16 @@ func (j *jsiiProxy_KubeService) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeService) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.Service" API object.
 // Experimental.
@@ -44884,6 +41460,25 @@ func NewKubeService_Override(k KubeService, scope constructs.Construct, id *stri
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeService_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeService",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.Service".
@@ -44972,57 +41567,6 @@ func (k *jsiiProxy_KubeService) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeService) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeService) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeService) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -45066,11 +41610,9 @@ type KubeServiceAccount interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -45140,6 +41682,16 @@ func (j *jsiiProxy_KubeServiceAccount) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeServiceAccount) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.ServiceAccount" API object.
 // Experimental.
@@ -45167,6 +41719,25 @@ func NewKubeServiceAccount_Override(k KubeServiceAccount, scope constructs.Const
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeServiceAccount_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeServiceAccount",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.ServiceAccount".
@@ -45255,57 +41826,6 @@ func (k *jsiiProxy_KubeServiceAccount) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeServiceAccount) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeServiceAccount) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeServiceAccount) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -45349,11 +41869,9 @@ type KubeServiceAccountList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -45423,6 +41941,16 @@ func (j *jsiiProxy_KubeServiceAccountList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeServiceAccountList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.ServiceAccountList" API object.
 // Experimental.
@@ -45450,6 +41978,25 @@ func NewKubeServiceAccountList_Override(k KubeServiceAccountList, scope construc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeServiceAccountList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeServiceAccountList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.ServiceAccountList".
@@ -45538,57 +42085,6 @@ func (k *jsiiProxy_KubeServiceAccountList) AddJsonPatch(ops ...cdk8s.JsonPatch) 
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeServiceAccountList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeServiceAccountList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeServiceAccountList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -45672,11 +42168,9 @@ type KubeServiceList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -45746,6 +42240,16 @@ func (j *jsiiProxy_KubeServiceList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeServiceList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.core.v1.ServiceList" API object.
 // Experimental.
@@ -45773,6 +42277,25 @@ func NewKubeServiceList_Override(k KubeServiceList, scope constructs.Construct, 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeServiceList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeServiceList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.core.v1.ServiceList".
@@ -45861,57 +42384,6 @@ func (k *jsiiProxy_KubeServiceList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeServiceList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeServiceList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeServiceList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -45988,11 +42460,9 @@ type KubeStatefulSet interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -46062,6 +42532,16 @@ func (j *jsiiProxy_KubeStatefulSet) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeStatefulSet) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1.StatefulSet" API object.
 // Experimental.
@@ -46089,6 +42569,25 @@ func NewKubeStatefulSet_Override(k KubeStatefulSet, scope constructs.Construct, 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeStatefulSet_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeStatefulSet",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1.StatefulSet".
@@ -46177,57 +42676,6 @@ func (k *jsiiProxy_KubeStatefulSet) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeStatefulSet) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeStatefulSet) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeStatefulSet) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -46271,11 +42719,9 @@ type KubeStatefulSetList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -46345,6 +42791,16 @@ func (j *jsiiProxy_KubeStatefulSetList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeStatefulSetList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1.StatefulSetList" API object.
 // Experimental.
@@ -46372,6 +42828,25 @@ func NewKubeStatefulSetList_Override(k KubeStatefulSetList, scope constructs.Con
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeStatefulSetList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeStatefulSetList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1.StatefulSetList".
@@ -46460,57 +42935,6 @@ func (k *jsiiProxy_KubeStatefulSetList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeStatefulSetList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeStatefulSetList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeStatefulSetList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -46563,11 +42987,9 @@ type KubeStatefulSetListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -46637,6 +43059,16 @@ func (j *jsiiProxy_KubeStatefulSetListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeStatefulSetListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1beta1.StatefulSetList" API object.
 // Experimental.
@@ -46664,6 +43096,25 @@ func NewKubeStatefulSetListV1Beta1_Override(k KubeStatefulSetListV1Beta1, scope 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeStatefulSetListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeStatefulSetListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1beta1.StatefulSetList".
@@ -46752,57 +43203,6 @@ func (k *jsiiProxy_KubeStatefulSetListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPat
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeStatefulSetListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeStatefulSetListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeStatefulSetListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -46855,11 +43255,9 @@ type KubeStatefulSetListV1Beta2 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -46929,6 +43327,16 @@ func (j *jsiiProxy_KubeStatefulSetListV1Beta2) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeStatefulSetListV1Beta2) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1beta2.StatefulSetList" API object.
 // Experimental.
@@ -46956,6 +43364,25 @@ func NewKubeStatefulSetListV1Beta2_Override(k KubeStatefulSetListV1Beta2, scope 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeStatefulSetListV1Beta2_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeStatefulSetListV1Beta2",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1beta2.StatefulSetList".
@@ -47044,57 +43471,6 @@ func (k *jsiiProxy_KubeStatefulSetListV1Beta2) AddJsonPatch(ops ...cdk8s.JsonPat
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeStatefulSetListV1Beta2) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeStatefulSetListV1Beta2) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeStatefulSetListV1Beta2) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -47167,11 +43543,9 @@ type KubeStatefulSetV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -47241,6 +43615,16 @@ func (j *jsiiProxy_KubeStatefulSetV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeStatefulSetV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1beta1.StatefulSet" API object.
 // Experimental.
@@ -47268,6 +43652,25 @@ func NewKubeStatefulSetV1Beta1_Override(k KubeStatefulSetV1Beta1, scope construc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeStatefulSetV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeStatefulSetV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1beta1.StatefulSet".
@@ -47356,57 +43759,6 @@ func (k *jsiiProxy_KubeStatefulSetV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) 
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeStatefulSetV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeStatefulSetV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeStatefulSetV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -47470,11 +43822,9 @@ type KubeStatefulSetV1Beta2 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -47544,6 +43894,16 @@ func (j *jsiiProxy_KubeStatefulSetV1Beta2) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeStatefulSetV1Beta2) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.apps.v1beta2.StatefulSet" API object.
 // Experimental.
@@ -47571,6 +43931,25 @@ func NewKubeStatefulSetV1Beta2_Override(k KubeStatefulSetV1Beta2, scope construc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeStatefulSetV1Beta2_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeStatefulSetV1Beta2",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.apps.v1beta2.StatefulSet".
@@ -47659,57 +44038,6 @@ func (k *jsiiProxy_KubeStatefulSetV1Beta2) AddJsonPatch(ops ...cdk8s.JsonPatch) 
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeStatefulSetV1Beta2) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeStatefulSetV1Beta2) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeStatefulSetV1Beta2) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -47768,11 +44096,9 @@ type KubeStatus interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -47842,6 +44168,16 @@ func (j *jsiiProxy_KubeStatus) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeStatus) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.apimachinery.pkg.apis.meta.v1.Status" API object.
 // Experimental.
@@ -47869,6 +44205,25 @@ func NewKubeStatus_Override(k KubeStatus, scope constructs.Construct, id *string
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeStatus_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeStatus",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.apimachinery.pkg.apis.meta.v1.Status".
@@ -47957,57 +44312,6 @@ func (k *jsiiProxy_KubeStatus) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeStatus) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeStatus) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeStatus) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -48079,11 +44383,9 @@ type KubeStorageClass interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -48153,6 +44455,16 @@ func (j *jsiiProxy_KubeStorageClass) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeStorageClass) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.storage.v1.StorageClass" API object.
 // Experimental.
@@ -48180,6 +44492,25 @@ func NewKubeStorageClass_Override(k KubeStorageClass, scope constructs.Construct
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeStorageClass_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeStorageClass",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.storage.v1.StorageClass".
@@ -48268,57 +44599,6 @@ func (k *jsiiProxy_KubeStorageClass) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeStorageClass) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeStorageClass) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeStorageClass) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -48362,11 +44642,9 @@ type KubeStorageClassList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -48436,6 +44714,16 @@ func (j *jsiiProxy_KubeStorageClassList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeStorageClassList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.storage.v1.StorageClassList" API object.
 // Experimental.
@@ -48463,6 +44751,25 @@ func NewKubeStorageClassList_Override(k KubeStorageClassList, scope constructs.C
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeStorageClassList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeStorageClassList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.storage.v1.StorageClassList".
@@ -48551,57 +44858,6 @@ func (k *jsiiProxy_KubeStorageClassList) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeStorageClassList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeStorageClassList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeStorageClassList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -48656,11 +44912,9 @@ type KubeStorageClassListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -48730,6 +44984,16 @@ func (j *jsiiProxy_KubeStorageClassListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeStorageClassListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.storage.v1beta1.StorageClassList" API object.
 // Experimental.
@@ -48757,6 +45021,25 @@ func NewKubeStorageClassListV1Beta1_Override(k KubeStorageClassListV1Beta1, scop
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeStorageClassListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeStorageClassListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.storage.v1beta1.StorageClassList".
@@ -48843,57 +45126,6 @@ func (k *jsiiProxy_KubeStorageClassListV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPa
 		"addJsonPatch",
 		args,
 	)
-}
-
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeStorageClassListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeStorageClassListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeStorageClassListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
 }
 
 // Renders the object to Kubernetes JSON.
@@ -48991,11 +45223,9 @@ type KubeStorageClassV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -49065,6 +45295,16 @@ func (j *jsiiProxy_KubeStorageClassV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeStorageClassV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.storage.v1beta1.StorageClass" API object.
 // Experimental.
@@ -49092,6 +45332,25 @@ func NewKubeStorageClassV1Beta1_Override(k KubeStorageClassV1Beta1, scope constr
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeStorageClassV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeStorageClassV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.storage.v1beta1.StorageClass".
@@ -49180,57 +45439,6 @@ func (k *jsiiProxy_KubeStorageClassV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch)
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeStorageClassV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeStorageClassV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeStorageClassV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -49313,11 +45521,9 @@ type KubeSubjectAccessReview interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -49387,6 +45593,16 @@ func (j *jsiiProxy_KubeSubjectAccessReview) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeSubjectAccessReview) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.authorization.v1.SubjectAccessReview" API object.
 // Experimental.
@@ -49414,6 +45630,25 @@ func NewKubeSubjectAccessReview_Override(k KubeSubjectAccessReview, scope constr
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeSubjectAccessReview_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeSubjectAccessReview",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.authorization.v1.SubjectAccessReview".
@@ -49502,57 +45737,6 @@ func (k *jsiiProxy_KubeSubjectAccessReview) AddJsonPatch(ops ...cdk8s.JsonPatch)
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeSubjectAccessReview) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeSubjectAccessReview) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeSubjectAccessReview) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -49606,11 +45790,9 @@ type KubeSubjectAccessReviewV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -49680,6 +45862,16 @@ func (j *jsiiProxy_KubeSubjectAccessReviewV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeSubjectAccessReviewV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.authorization.v1beta1.SubjectAccessReview" API object.
 // Experimental.
@@ -49707,6 +45899,25 @@ func NewKubeSubjectAccessReviewV1Beta1_Override(k KubeSubjectAccessReviewV1Beta1
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeSubjectAccessReviewV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeSubjectAccessReviewV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.authorization.v1beta1.SubjectAccessReview".
@@ -49795,57 +46006,6 @@ func (k *jsiiProxy_KubeSubjectAccessReviewV1Beta1) AddJsonPatch(ops ...cdk8s.Jso
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeSubjectAccessReviewV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeSubjectAccessReviewV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeSubjectAccessReviewV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -49901,11 +46061,9 @@ type KubeTokenReview interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -49975,6 +46133,16 @@ func (j *jsiiProxy_KubeTokenReview) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeTokenReview) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.authentication.v1.TokenReview" API object.
 // Experimental.
@@ -50002,6 +46170,25 @@ func NewKubeTokenReview_Override(k KubeTokenReview, scope constructs.Construct, 
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeTokenReview_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeTokenReview",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.authentication.v1.TokenReview".
@@ -50090,57 +46277,6 @@ func (k *jsiiProxy_KubeTokenReview) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeTokenReview) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeTokenReview) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeTokenReview) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -50198,11 +46334,9 @@ type KubeTokenReviewV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -50272,6 +46406,16 @@ func (j *jsiiProxy_KubeTokenReviewV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeTokenReviewV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.authentication.v1beta1.TokenReview" API object.
 // Experimental.
@@ -50299,6 +46443,25 @@ func NewKubeTokenReviewV1Beta1_Override(k KubeTokenReviewV1Beta1, scope construc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeTokenReviewV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeTokenReviewV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.authentication.v1beta1.TokenReview".
@@ -50387,57 +46550,6 @@ func (k *jsiiProxy_KubeTokenReviewV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPatch) 
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeTokenReviewV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeTokenReviewV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeTokenReviewV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -50493,11 +46605,9 @@ type KubeValidatingWebhookConfigurationListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -50567,6 +46677,16 @@ func (j *jsiiProxy_KubeValidatingWebhookConfigurationListV1Beta1) Name() *string
 	return returns
 }
 
+func (j *jsiiProxy_KubeValidatingWebhookConfigurationListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.admissionregistration.v1beta1.ValidatingWebhookConfigurationList" API object.
 // Experimental.
@@ -50594,6 +46714,25 @@ func NewKubeValidatingWebhookConfigurationListV1Beta1_Override(k KubeValidatingW
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeValidatingWebhookConfigurationListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeValidatingWebhookConfigurationListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.admissionregistration.v1beta1.ValidatingWebhookConfigurationList".
@@ -50682,57 +46821,6 @@ func (k *jsiiProxy_KubeValidatingWebhookConfigurationListV1Beta1) AddJsonPatch(o
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeValidatingWebhookConfigurationListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeValidatingWebhookConfigurationListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeValidatingWebhookConfigurationListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -50789,11 +46877,9 @@ type KubeValidatingWebhookConfigurationV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -50863,6 +46949,16 @@ func (j *jsiiProxy_KubeValidatingWebhookConfigurationV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeValidatingWebhookConfigurationV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.admissionregistration.v1beta1.ValidatingWebhookConfiguration" API object.
 // Experimental.
@@ -50890,6 +46986,25 @@ func NewKubeValidatingWebhookConfigurationV1Beta1_Override(k KubeValidatingWebho
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeValidatingWebhookConfigurationV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeValidatingWebhookConfigurationV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.admissionregistration.v1beta1.ValidatingWebhookConfiguration".
@@ -50978,57 +47093,6 @@ func (k *jsiiProxy_KubeValidatingWebhookConfigurationV1Beta1) AddJsonPatch(ops .
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeValidatingWebhookConfigurationV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeValidatingWebhookConfigurationV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeValidatingWebhookConfigurationV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -51087,11 +47151,9 @@ type KubeVolumeAttachment interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -51161,6 +47223,16 @@ func (j *jsiiProxy_KubeVolumeAttachment) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeVolumeAttachment) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.storage.v1.VolumeAttachment" API object.
 // Experimental.
@@ -51188,6 +47260,25 @@ func NewKubeVolumeAttachment_Override(k KubeVolumeAttachment, scope constructs.C
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeVolumeAttachment_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeVolumeAttachment",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.storage.v1.VolumeAttachment".
@@ -51276,57 +47367,6 @@ func (k *jsiiProxy_KubeVolumeAttachment) AddJsonPatch(ops ...cdk8s.JsonPatch) {
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeVolumeAttachment) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeVolumeAttachment) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeVolumeAttachment) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -51370,11 +47410,9 @@ type KubeVolumeAttachmentList interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -51444,6 +47482,16 @@ func (j *jsiiProxy_KubeVolumeAttachmentList) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeVolumeAttachmentList) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.storage.v1.VolumeAttachmentList" API object.
 // Experimental.
@@ -51471,6 +47519,25 @@ func NewKubeVolumeAttachmentList_Override(k KubeVolumeAttachmentList, scope cons
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeVolumeAttachmentList_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeVolumeAttachmentList",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.storage.v1.VolumeAttachmentList".
@@ -51559,57 +47626,6 @@ func (k *jsiiProxy_KubeVolumeAttachmentList) AddJsonPatch(ops ...cdk8s.JsonPatch
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeVolumeAttachmentList) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeVolumeAttachmentList) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeVolumeAttachmentList) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -51664,11 +47680,9 @@ type KubeVolumeAttachmentListV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -51738,6 +47752,16 @@ func (j *jsiiProxy_KubeVolumeAttachmentListV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeVolumeAttachmentListV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.storage.v1alpha1.VolumeAttachmentList" API object.
 // Experimental.
@@ -51765,6 +47789,25 @@ func NewKubeVolumeAttachmentListV1Alpha1_Override(k KubeVolumeAttachmentListV1Al
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeVolumeAttachmentListV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeVolumeAttachmentListV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.storage.v1alpha1.VolumeAttachmentList".
@@ -51853,57 +47896,6 @@ func (k *jsiiProxy_KubeVolumeAttachmentListV1Alpha1) AddJsonPatch(ops ...cdk8s.J
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeVolumeAttachmentListV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeVolumeAttachmentListV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeVolumeAttachmentListV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -51958,11 +47950,9 @@ type KubeVolumeAttachmentListV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -52032,6 +48022,16 @@ func (j *jsiiProxy_KubeVolumeAttachmentListV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeVolumeAttachmentListV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.storage.v1beta1.VolumeAttachmentList" API object.
 // Experimental.
@@ -52059,6 +48059,25 @@ func NewKubeVolumeAttachmentListV1Beta1_Override(k KubeVolumeAttachmentListV1Bet
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeVolumeAttachmentListV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeVolumeAttachmentListV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.storage.v1beta1.VolumeAttachmentList".
@@ -52147,57 +48166,6 @@ func (k *jsiiProxy_KubeVolumeAttachmentListV1Beta1) AddJsonPatch(ops ...cdk8s.Js
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeVolumeAttachmentListV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeVolumeAttachmentListV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeVolumeAttachmentListV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -52271,11 +48239,9 @@ type KubeVolumeAttachmentV1Alpha1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -52345,6 +48311,16 @@ func (j *jsiiProxy_KubeVolumeAttachmentV1Alpha1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeVolumeAttachmentV1Alpha1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.storage.v1alpha1.VolumeAttachment" API object.
 // Experimental.
@@ -52372,6 +48348,25 @@ func NewKubeVolumeAttachmentV1Alpha1_Override(k KubeVolumeAttachmentV1Alpha1, sc
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeVolumeAttachmentV1Alpha1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeVolumeAttachmentV1Alpha1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.storage.v1alpha1.VolumeAttachment".
@@ -52460,57 +48455,6 @@ func (k *jsiiProxy_KubeVolumeAttachmentV1Alpha1) AddJsonPatch(ops ...cdk8s.JsonP
 	)
 }
 
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeVolumeAttachmentV1Alpha1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeVolumeAttachmentV1Alpha1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeVolumeAttachmentV1Alpha1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
-}
-
 // Renders the object to Kubernetes JSON.
 //
 // To disable sorting of dictionary keys in output object set the
@@ -52573,11 +48517,9 @@ type KubeVolumeAttachmentV1Beta1 interface {
 	Kind() *string
 	Metadata() cdk8s.ApiObjectMetadataDefinition
 	Name() *string
+	Node() constructs.Node
 	AddDependency(dependencies ...constructs.IConstruct)
 	AddJsonPatch(ops ...cdk8s.JsonPatch)
-	OnPrepare()
-	OnSynthesize(session constructs.ISynthesisSession)
-	OnValidate() *[]*string
 	ToJson() interface{}
 	ToString() *string
 }
@@ -52647,6 +48589,16 @@ func (j *jsiiProxy_KubeVolumeAttachmentV1Beta1) Name() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubeVolumeAttachmentV1Beta1) Node() constructs.Node {
+	var returns constructs.Node
+	_jsii_.Get(
+		j,
+		"node",
+		&returns,
+	)
+	return returns
+}
+
 
 // Defines a "io.k8s.api.storage.v1beta1.VolumeAttachment" API object.
 // Experimental.
@@ -52674,6 +48626,25 @@ func NewKubeVolumeAttachmentV1Beta1_Override(k KubeVolumeAttachmentV1Beta1, scop
 		[]interface{}{scope, id, props},
 		k,
 	)
+}
+
+// Checks if `x` is a construct.
+//
+// Returns: true if `x` is an object created from a class which extends `Construct`.
+// Deprecated: use `x instanceof Construct` instead
+func KubeVolumeAttachmentV1Beta1_IsConstruct(x interface{}) *bool {
+	_init_.Initialize()
+
+	var returns *bool
+
+	_jsii_.StaticInvoke(
+		"@opencdk8s/cdk8s-argo-rollout.k8s.KubeVolumeAttachmentV1Beta1",
+		"isConstruct",
+		[]interface{}{x},
+		&returns,
+	)
+
+	return returns
 }
 
 // Renders a Kubernetes manifest for "io.k8s.api.storage.v1beta1.VolumeAttachment".
@@ -52760,57 +48731,6 @@ func (k *jsiiProxy_KubeVolumeAttachmentV1Beta1) AddJsonPatch(ops ...cdk8s.JsonPa
 		"addJsonPatch",
 		args,
 	)
-}
-
-// Perform final modifications before synthesis.
-//
-// This method can be implemented by derived constructs in order to perform
-// final changes before synthesis. prepare() will be called after child
-// constructs have been prepared.
-//
-// This is an advanced framework feature. Only use this if you
-// understand the implications.
-// Experimental.
-func (k *jsiiProxy_KubeVolumeAttachmentV1Beta1) OnPrepare() {
-	_jsii_.InvokeVoid(
-		k,
-		"onPrepare",
-		nil, // no parameters
-	)
-}
-
-// Allows this construct to emit artifacts into the cloud assembly during synthesis.
-//
-// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
-// as they participate in synthesizing the cloud assembly.
-// Experimental.
-func (k *jsiiProxy_KubeVolumeAttachmentV1Beta1) OnSynthesize(session constructs.ISynthesisSession) {
-	_jsii_.InvokeVoid(
-		k,
-		"onSynthesize",
-		[]interface{}{session},
-	)
-}
-
-// Validate the current construct.
-//
-// This method can be implemented by derived constructs in order to perform
-// validation logic. It is called on all constructs before synthesis.
-//
-// Returns: An array of validation error messages, or an empty array if there the construct is valid.
-// Deprecated: use `Node.addValidation()` to subscribe validation functions on this construct
-// instead of overriding this method.
-func (k *jsiiProxy_KubeVolumeAttachmentV1Beta1) OnValidate() *[]*string {
-	var returns *[]*string
-
-	_jsii_.Invoke(
-		k,
-		"onValidate",
-		nil, // no parameters
-		&returns,
-	)
-
-	return returns
 }
 
 // Renders the object to Kubernetes JSON.
